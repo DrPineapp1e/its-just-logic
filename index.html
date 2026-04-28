@@ -1150,20 +1150,24 @@ function App(){
           if(prev.pvpMode){
             const newTerr=Math.max(0,prev.p2.territory-1);
             const won=newTerr===0;
+            const newPlacing=(prev.placementRemaining||0)+1;
             return {...prev,inventory:consume(prev.inventory),selectedItem:null,
               p2:{...prev.p2,territory:newTerr},
+              placementMode:true,placementRemaining:newPlacing,viewMode:'your',
               gameOver:won,winner:won?`p${prev.activePlayer}`:prev.winner,
-              pvpPendingPass:!won,
-              log:[{who:`p${prev.activePlayer}`,text:`Used Pirates — stole 1 territory! Opponent: ${newTerr}${won?' — DEFEATED!':''}`},...prev.log],
-              pendingToast:{text:won?'Pirates! Opponent defeated — YOU WIN!':`Pirates! Opponent territory: ${newTerr}`,color:'#aa6600'}};
+              pvpPendingPass:false,
+              log:[{who:`p${prev.activePlayer}`,text:`Used Pirates — stole 1 territory and gained 1 CR! Opponent: ${newTerr}${won?' — DEFEATED!':''}`},...prev.log],
+              pendingToast:{text:won?'Pirates! Opponent defeated — YOU WIN!':`Pirates! Stole 1 territory — place your CR tile!`,color:'#aa6600'}};
           }
           const newTerr=Math.max(0,prev.aiTerritory-1);
           const won=newTerr===0;
+          const newPlacing=(prev.placementRemaining||0)+1;
           return {...prev,inventory:consume(prev.inventory),selectedItem:null,
             aiTerritory:newTerr,gameOver:won,winner:won?'you':prev.winner,
-            turn:won?'you':'ai',
-            log:[{who:'you',text:`Used Pirates — stole 1 ${botName(prev.aiDifficulty)} territory! ${botName(prev.aiDifficulty)} territory: ${newTerr}${won?` — ${botName(prev.aiDifficulty)} defeated!`:''}`},...prev.log],
-            pendingToast:{text:won?`Pirates! ${botName(prev.aiDifficulty)} has no territory — YOU WIN!`:`Pirates! ${botName(prev.aiDifficulty)} territory now: ${newTerr}`,color:'#aa6600'}};
+            placementMode:!won,placementRemaining:won?prev.placementRemaining:newPlacing,viewMode:'your',
+            turn:won?'you':'you',
+            log:[{who:'you',text:`Used Pirates — stole 1 ${botName(prev.aiDifficulty)} territory and gained 1 CR!${won?' '+botName(prev.aiDifficulty)+' defeated!':''}`},...prev.log],
+            pendingToast:{text:won?`Pirates! ${botName(prev.aiDifficulty)} defeated — YOU WIN!`:`Pirates! Stole 1 territory — place your CR tile!`,color:'#aa6600'}};
         }
         case 'laser':
           return {...prev,selectedItem:null,
