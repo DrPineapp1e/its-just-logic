@@ -1,6 +1,6 @@
 {
   "name": "its-just-logic",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "It's Just Logic — a space territory strategy game",
   "main": "main.js",
   "scripts": {
@@ -10,6 +10,9 @@
   "build": {
     "appId": "com.itsjustlogic.game",
     "productName": "It's Just Logic",
+    "directories": {
+      "output": "release"
+    },
     "files": [
       "index.html",
       "main.js",
