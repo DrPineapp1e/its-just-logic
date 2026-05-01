@@ -71,6 +71,10 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 .c-silo:hover{background:#1a0830!important;border-color:#9944dd!important}
 .c-silo-pick{background:#080216!important;border-color:#6622aa!important;cursor:pointer!important}
 .c-silo-pick:hover{background:#100528!important;box-shadow:inset 0 0 8px rgba(100,34,170,.25)}
+@keyframes silo-ready{0%,100%{border-color:#cc2233;box-shadow:inset 0 0 6px rgba(200,30,50,.2)}50%{border-color:#ff4455;box-shadow:inset 0 0 12px rgba(220,40,60,.4)}}
+.c-silo-prepped{background:#200610!important;border-color:#cc2233!important;cursor:pointer!important;animation:silo-ready 1s ease infinite}
+.c-hit-silo-warn{position:relative}
+.c-hit-silo-warn::after{content:'!';position:absolute;top:1px;right:3px;font-size:11px;font-weight:bold;color:#ff3344;line-height:1;text-shadow:0 0 8px rgba(255,50,60,.8)}
 .c-reroot-pick{background:#0c1c06!important;border-color:#44991a!important;cursor:pointer!important}
 .c-reroot-pick:hover{background:#142606!important;box-shadow:inset 0 0 8px rgba(60,150,30,.18)}
 .c-broken{background:#0c0a04;border-color:#1a1508;border-style:dashed}
@@ -113,27 +117,27 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 .inv-item.sel{border-color:#3a5520;background:#101e0c}
 .inv-name{font-size:11px;color:#7a9060}
 
-.btn{padding:6px 12px;border-radius:2px;border:1px solid #223020;background:linear-gradient(180deg,#121a10,#0c1008);color:#6a8050;cursor:pointer;font-family:inherit;font-size:11px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;transition:all .12s;box-shadow:inset 0 1px 0 rgba(90,150,60,.12),inset 0 -3px 0 rgba(0,0,0,.45),0 2px 5px rgba(0,0,0,.75);text-shadow:0 1px 2px rgba(0,0,0,.9)}
-.btn:hover{background:linear-gradient(180deg,#1a2616,#121a10);border-color:#304428;box-shadow:inset 0 1px 0 rgba(90,160,60,.2),inset 0 -3px 0 rgba(0,0,0,.4),0 2px 7px rgba(0,0,0,.7)}
+.btn{padding:6px 12px;border-radius:2px;border:1px solid #223020;background:#0f1510;color:#6a8050;cursor:pointer;font-family:inherit;font-size:11px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;transition:all .12s;box-shadow:inset 0 1px 0 rgba(90,150,60,.12),0 2px 5px rgba(0,0,0,.75);text-shadow:0 1px 2px rgba(0,0,0,.9)}
+.btn:hover{background:#141e12;border-color:#304428;box-shadow:inset 0 1px 0 rgba(90,160,60,.2),0 2px 7px rgba(0,0,0,.7)}
 .btn:active{box-shadow:inset 0 3px 7px rgba(0,0,0,.85);transform:translateY(1px)}
 .btn:disabled{opacity:.28;cursor:not-allowed}
 .btn-view{padding:5px 10px;font-size:11px}
-.btn-view.on{background:linear-gradient(180deg,#162214,#0e1810);border-color:#3a5828;color:#7d9855;box-shadow:inset 0 1px 0 rgba(90,160,50,.18),inset 0 -3px 0 rgba(0,0,0,.5),0 2px 4px rgba(0,0,0,.6)}
-.btn-shop{background:linear-gradient(180deg,#161204,#0c0c04);border-color:#3a3010;color:#aa9933;width:100%;box-shadow:inset 0 1px 0 rgba(200,180,30,.1),inset 0 -3px 0 rgba(0,0,0,.45),0 2px 6px rgba(0,0,0,.75)}
-.btn-shop:hover{background:linear-gradient(180deg,#201a06,#141206);border-color:#554510;box-shadow:inset 0 1px 0 rgba(200,180,30,.18),inset 0 -3px 0 rgba(0,0,0,.4),0 2px 8px rgba(0,0,0,.6)}
-.btn-search{background:linear-gradient(180deg,#0e1c0c,#0a1208);border-color:#2a4a20;color:#859c5a;font-size:13px;padding:9px 28px;box-shadow:inset 0 1px 0 rgba(90,160,50,.15),inset 0 -3px 0 rgba(0,0,0,.45),0 3px 8px rgba(0,0,0,.75)}
-.btn-search:hover{background:linear-gradient(180deg,#162814,#0e1c0a);border-color:#3a6a28;color:#92aa6a;box-shadow:inset 0 1px 0 rgba(90,165,50,.24),inset 0 -3px 0 rgba(0,0,0,.4),0 3px 12px rgba(0,0,0,.65)}
-.btn-attack{background:linear-gradient(180deg,#200808,#0e0404);border-color:#4a1010;color:#dd4422;font-size:13px;padding:9px 28px;box-shadow:inset 0 1px 0 rgba(220,60,30,.12),inset 0 -3px 0 rgba(0,0,0,.45),0 3px 8px rgba(0,0,0,.75)}
-.btn-attack:hover{background:linear-gradient(180deg,#280a0a,#180606);border-color:#661818;box-shadow:inset 0 1px 0 rgba(220,60,30,.22),inset 0 -3px 0 rgba(0,0,0,.4),0 3px 12px rgba(0,0,0,.65)}
-.btn-go{background:linear-gradient(180deg,#1c1608,#100e04);border-color:#4a3c18;color:#ddaa44;font-size:13px;padding:9px 20px;box-shadow:inset 0 1px 0 rgba(220,180,50,.2),inset 0 -3px 0 rgba(0,0,0,.45),0 3px 8px rgba(0,0,0,.75)}
-.btn-go:hover{background:linear-gradient(180deg,#261e0a,#181408);border-color:#665520;color:#eebb55;box-shadow:inset 0 1px 0 rgba(220,180,50,.3),inset 0 -3px 0 rgba(0,0,0,.4),0 3px 12px rgba(0,0,0,.65)}
+.btn-view.on{background:#121e10;border-color:#3a5828;color:#7d9855;box-shadow:inset 0 1px 0 rgba(90,160,50,.18),0 2px 4px rgba(0,0,0,.6)}
+.btn-shop{background:#101004;border-color:#3a3010;color:#aa9933;width:100%;box-shadow:inset 0 1px 0 rgba(200,180,30,.1),0 2px 6px rgba(0,0,0,.75)}
+.btn-shop:hover{background:#181404;border-color:#554510;box-shadow:inset 0 1px 0 rgba(200,180,30,.18),0 2px 8px rgba(0,0,0,.6)}
+.btn-search{background:#0c1608;border-color:#2a4a20;color:#859c5a;font-size:13px;padding:9px 28px;box-shadow:inset 0 1px 0 rgba(90,160,50,.15),0 3px 8px rgba(0,0,0,.75)}
+.btn-search:hover{background:#122010;border-color:#3a6a28;color:#92aa6a;box-shadow:inset 0 1px 0 rgba(90,165,50,.24),0 3px 12px rgba(0,0,0,.65)}
+.btn-attack{background:#140404;border-color:#4a1010;color:#dd4422;font-size:13px;padding:9px 28px;box-shadow:inset 0 1px 0 rgba(220,60,30,.12),0 3px 8px rgba(0,0,0,.75)}
+.btn-attack:hover{background:#1c0606;border-color:#661818;box-shadow:inset 0 1px 0 rgba(220,60,30,.22),0 3px 12px rgba(0,0,0,.65)}
+.btn-go{background:#141006;border-color:#4a3c18;color:#ddaa44;font-size:13px;padding:9px 20px;box-shadow:inset 0 1px 0 rgba(220,180,50,.2),0 3px 8px rgba(0,0,0,.75)}
+.btn-go:hover{background:#1c1808;border-color:#665520;color:#eebb55;box-shadow:inset 0 1px 0 rgba(220,180,50,.3),0 3px 12px rgba(0,0,0,.65)}
 .btn-go:active{transform:translateY(1px);box-shadow:inset 0 3px 7px rgba(0,0,0,.9)}
-.btn-cancel{background:linear-gradient(180deg,#121812,#0c100c);border-color:#202818;color:#485a38;font-size:13px;padding:9px 14px;box-shadow:inset 0 1px 0 rgba(80,130,50,.08),inset 0 -3px 0 rgba(0,0,0,.4),0 2px 5px rgba(0,0,0,.7)}
-.btn-cancel:hover{background:linear-gradient(180deg,#1a2218,#121812);border-color:#2e3e24}
-.btn-buy{padding:5px 10px;font-size:11px;background:linear-gradient(180deg,#101a0e,#0c100a);border-color:#2a4020;color:#859858;box-shadow:inset 0 1px 0 rgba(90,155,50,.12),inset 0 -2px 0 rgba(0,0,0,.45),0 2px 4px rgba(0,0,0,.6)}
+.btn-cancel{background:#0e100e;border-color:#202818;color:#485a38;font-size:13px;padding:9px 14px;box-shadow:inset 0 1px 0 rgba(80,130,50,.08),0 2px 5px rgba(0,0,0,.7)}
+.btn-cancel:hover{background:#141814;border-color:#2e3e24}
+.btn-buy{padding:5px 10px;font-size:11px;background:#0e1208;border-color:#2a4020;color:#859858;box-shadow:inset 0 1px 0 rgba(90,155,50,.12),0 2px 4px rgba(0,0,0,.6)}
 .btn-buy:disabled{background:#080e08;border-color:#101810;color:#222e18;box-shadow:none}
 .btn-sel{padding:4px 8px;font-size:10px}
-.btn-sel.on{background:linear-gradient(180deg,#142010,#0e180c);border-color:#304428;color:#859858;box-shadow:inset 0 1px 0 rgba(90,165,50,.15),inset 0 -2px 0 rgba(0,0,0,.45),0 2px 4px rgba(0,0,0,.6)}
+.btn-sel.on{background:#101808;border-color:#304428;color:#859858;box-shadow:inset 0 1px 0 rgba(90,165,50,.15),0 2px 4px rgba(0,0,0,.6)}
 
 .bottom{background:linear-gradient(180deg,#0a0e0a,#080c08);border-top:1px solid #182018;padding:8px 14px;display:flex;flex-direction:column;gap:5px;flex-shrink:0;box-shadow:inset 0 1px 0 rgba(80,130,50,.07)}
 .bottom-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
@@ -162,8 +166,8 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 .start-title::after{content:' ]';color:rgba(90,115,55,.28);font-weight:100;letter-spacing:0}
 .start-sub{font-size:10px;color:#3d5232;letter-spacing:4px;text-transform:uppercase;margin-top:4px;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.9)}
 .start-lore{font-size:9px;color:rgba(80,100,60,.4);letter-spacing:2px;text-transform:uppercase;text-align:center;line-height:1.7;margin-top:2px}
-.btn-start{font-size:13px;padding:13px 48px;letter-spacing:3px;background:linear-gradient(180deg,#141e10,#0c1208 70%,#090f06);border:1px solid #364e1e;color:#869860;border-radius:2px;cursor:pointer;font-family:inherit;font-weight:bold;text-transform:uppercase;transition:all .18s;min-width:220px;box-shadow:inset 0 1px 0 rgba(90,130,50,.14),inset 0 -4px 0 rgba(0,0,0,.55),0 5px 14px rgba(0,0,0,.88);text-shadow:0 0 14px rgba(80,120,40,.2),0 1px 3px rgba(0,0,0,.95)}
-.btn-start:hover{background:linear-gradient(180deg,#1c2a14,#111a0e);border-color:#4a6428;box-shadow:inset 0 1px 0 rgba(90,140,50,.22),inset 0 -4px 0 rgba(0,0,0,.5),0 5px 20px rgba(50,90,25,.1);color:#95ab72}
+.btn-start{font-size:13px;padding:13px 48px;letter-spacing:3px;background:#111a0e;border:1px solid #364e1e;color:#869860;border-radius:2px;cursor:pointer;font-family:inherit;font-weight:bold;text-transform:uppercase;transition:all .18s;min-width:220px;box-shadow:inset 0 1px 0 rgba(90,130,50,.14),0 5px 14px rgba(0,0,0,.88);text-shadow:0 0 14px rgba(80,120,40,.2),0 1px 3px rgba(0,0,0,.95)}
+.btn-start:hover{background:#18240e;border-color:#4a6428;box-shadow:inset 0 1px 0 rgba(90,140,50,.22),0 5px 20px rgba(50,90,25,.1);color:#95ab72}
 .btn-start:active{transform:translateY(2px);box-shadow:inset 0 3px 8px rgba(0,0,0,.9),0 1px 3px rgba(0,0,0,.5)}
 .loading-screen{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;gap:18px;animation:fadeIn .25s ease}
 
@@ -207,18 +211,116 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
 <script type="text/babel">
 const { useState, useCallback, useRef, useEffect, useMemo } = React;
 
+// ── Audio Engine ──────────────────────────────────────────────────────────────
+let _actx = null;
+function getACtx(){
+  if(!_actx) _actx = new (window.AudioContext||window.webkitAudioContext)();
+  if(_actx.state==='suspended') _actx.resume();
+  return _actx;
+}
+
+
+// Territory hit — ascending triad confirm
+function playHit(){
+  try{
+    const ctx=getACtx(), t=ctx.currentTime;
+    window.dispatchEvent(new CustomEvent('sfx',{detail:'HIT'}));
+    [523,659,784].forEach((freq,i)=>{
+      const d=i*0.14;
+      const o=ctx.createOscillator(), g=ctx.createGain();
+      o.type='sine';
+      o.frequency.value=freq;
+      g.gain.setValueAtTime(0,t+d);
+      g.gain.linearRampToValueAtTime(0.22,t+d+0.012);
+      g.gain.exponentialRampToValueAtTime(0.001,t+d+0.55);
+      o.connect(g); g.connect(ctx.destination);
+      o.start(t+d); o.stop(t+d+0.6);
+    });
+  }catch(e){}
+}
+
+// Miss — descending two-step negative tone
+function playMiss(){
+  try{
+    const ctx=getACtx(), t=ctx.currentTime;
+    window.dispatchEvent(new CustomEvent('sfx',{detail:'MISS'}));
+    // Two tones stepping down — like a "wrong answer" buzzer but softer
+    [{f:380,d:0,len:0.2},{f:220,d:0.18,len:0.35}].forEach(({f,d,len})=>{
+      const o=ctx.createOscillator(), g=ctx.createGain();
+      o.type='sine'; o.frequency.value=f;
+      g.gain.setValueAtTime(0.38,t+d);
+      g.gain.exponentialRampToValueAtTime(0.001,t+d+len);
+      o.connect(g); g.connect(ctx.destination);
+      o.start(t+d); o.stop(t+d+len+0.01);
+    });
+  }catch(e){}
+}
+
+// Resource found — triple ascending chime
+function playResource(){
+  try{
+    const ctx=getACtx(), t=ctx.currentTime;
+    window.dispatchEvent(new CustomEvent('sfx',{detail:'RESOURCE'}));
+    [0,0.1,0.2].forEach((delay,i)=>{
+      const freq=[880,1108,1320][i];
+      const o=ctx.createOscillator(), g=ctx.createGain();
+      o.type='sine';
+      o.frequency.value=freq;
+      g.gain.setValueAtTime(0,t+delay);
+      g.gain.linearRampToValueAtTime(0.26,t+delay+0.012);
+      g.gain.exponentialRampToValueAtTime(0.001,t+delay+0.58);
+      o.connect(g); g.connect(ctx.destination);
+      o.start(t+delay); o.stop(t+delay+0.62);
+    });
+  }catch(e){}
+}
+
+// Alert — fast alternating two-tone klaxon (submarine style)
+function playAlarm(){
+  try{
+    const ctx=getACtx(), t=ctx.currentTime;
+    window.dispatchEvent(new CustomEvent('sfx',{detail:'ALARM'}));
+    // Alternate between two pitches rapidly — classic emergency klaxon
+    [550,990,550,990,550].forEach((freq,i)=>{
+      const d=i*0.14;
+      const o=ctx.createOscillator(), g=ctx.createGain();
+      o.type='square'; o.frequency.value=freq;
+      const lp=ctx.createBiquadFilter();
+      lp.type='lowpass'; lp.frequency.value=1600; lp.Q.value=0.5;
+      g.gain.setValueAtTime(0,t+d);
+      g.gain.linearRampToValueAtTime(0.35,t+d+0.01);
+      g.gain.setValueAtTime(0.35,t+d+0.1);
+      g.gain.linearRampToValueAtTime(0,t+d+0.13);
+      o.connect(lp); lp.connect(g); g.connect(ctx.destination);
+      o.start(t+d); o.stop(t+d+0.15);
+    });
+  }catch(e){}
+}
+
+// Debug: play every sound in sequence with enough gap to hear each clearly
+function playAllSfx(){
+  const seq=[
+    {fn:playHit,     delay:0},
+    {fn:playMiss,    delay:1300},
+    {fn:playResource,delay:2100},
+    {fn:playAlarm,   delay:3200},
+  ];
+  seq.forEach(({fn,delay})=>setTimeout(fn,delay));
+}
+
 const COLS = ['A','B','C','D','E','F','G','H','I','J','K','L'];
 
 const SHOP_ITEMS = [
-  { id:'emp', name:'EMP', cost:1, desc:"Skip the opponent's next turn. You still get to make your move this turn." },
-  { id:'shield', name:'Shield', cost:1, desc:"Pick one of your territory tiles to hide. If the enemy lands on it, they'll just see a miss." },
-  { id:'pirates', name:'Pirates', cost:3, desc:"Rip one territory tile straight from the opponent. If that's their last one, they're done." },
-  { id:'laser', name:'Laser Ablation', cost:2, desc:"Blow up any single tile on the opponent's grid. Gone. No resources, just rubble." },
-  { id:'station', name:'Space Station', cost:3, desc:"Drop a station tile anywhere on your grid. Works like territory — collect CRs next to it, expand from it. Max 7 station tiles. Losing station tiles won't end the game." },
-  { id:'addroot', name:'Add Root', cost:4, desc:"Pick any territory or station tile and make it a second home base. Your territory is now anchored to both — anything connected to either one is safe." },
-  { id:'torpedo', name:'Antimatter Torpedo', cost:7, desc:"Place a silo next to your territory (uses your turn). Fire it whenever you're ready — 3×3 explosion. Hit their territory in the center and you win instantly. Silo disappears after firing." },
-  { id:'probe', name:'Resource Probe', cost:4, desc:"Ping 3 random uncollected resource spots on the enemy's grid. You'll get the coordinates but not the type — you'll have to guess what's there. Uses your move." },
-  { id:'spy', name:'Spy Resource', cost:3, desc:"Plant a fake SR on your grid. When the enemy finds it they get +1 SR — but so do you get eyes on them. Hit Detonate to wipe their inventory and freeze their shop for 3 turns. If they spend the SR before you detonate, it's too late." },
+  { id:'emp',     name:'EMP',                cost:1, desc:"Skip the opponent's next turn. You still get to make your move this turn." },
+  { id:'shield',  name:'Shield',             cost:1, desc:"Pick one of your territory tiles to hide. If the enemy lands on it, they'll just see a miss." },
+  { id:'laser',   name:'Laser Ablation',     cost:2, desc:"Blow up any single tile on the opponent's grid. Gone. No resources, just rubble." },
+  { id:'pirates', name:'Pirates',            cost:3, desc:"Rip one territory tile straight from the opponent and gain 1 CR. If that's their last one, they're done." },
+  { id:'spy',     name:'Spy Resource',       cost:3, desc:"Plant a fake SR on your grid. When the enemy finds it they get +1 SR — but so do you get eyes on them. Hit Detonate to wipe their inventory and freeze their shop for 3 turns. If they spend the SR before you detonate, it's too late." },
+  { id:'station', name:'Space Station',      cost:3, desc:"Drop a station tile anywhere on your grid. Works like territory — collect CRs next to it, expand from it. Max 7 station tiles. Losing station tiles won't end the game." },
+  { id:'addroot', name:'Add Root',           cost:4, desc:"Pick any territory or station tile and make it a second home base. Your territory is now anchored to both — anything connected to either one is safe." },
+  { id:'probe',   name:'Resource Probe',     cost:4, desc:"Ping 3 random uncollected resource spots on the enemy's grid. You'll get the coordinates but not the type — you'll have to guess what's there. Uses your move." },
+  { id:'decoy',   name:'Decoy',              cost:4, desc:"Send a fake attack signal. The opponent sees a convincing attack message — a fake source coordinate and one of their territory tiles as the target. You only see where the fake signal came from. Watch how they react." },
+  { id:'torpedo', name:'Antimatter Torpedo', cost:7, desc:"Place a silo next to your territory (uses your turn). Click it and hit Prepare Launch — uses a turn and warns the opponent with a red ! on their grid. Then fire: 3×3 explosion. Hit their territory in the center and you win instantly. Silo disappears after firing." },
 ];
 
 function inBounds(r,c){ return r>=0&&r<12&&c>=0&&c<12; }
@@ -451,16 +553,35 @@ function applyAiSearch(state,row,col,destroy=false){
 
 function pickAiTarget(state){
   const {aiDifficulty,aiHitGrid,aiTargetQueue}=state;
+  // Priority 1: queue (ortho neighbors of territory hits) — medium and hard
   if(aiDifficulty!=='easy'){
     for(const [r,c] of aiTargetQueue)
       if(aiHitGrid[r][c]===null) return [r,c];
   }
   if(aiDifficulty==='hard'){
+    // Priority 2: cells within radius-2 of known territory hits, prefer checkerboard
+    const terrHits=[];
+    for(let r=0;r<12;r++) for(let c=0;c<12;c++)
+      if(aiHitGrid[r][c]?.result==='territory') terrHits.push([r,c]);
+    if(terrHits.length){
+      const near=new Set();
+      for(const [tr,tc] of terrHits)
+        for(let dr=-2;dr<=2;dr++) for(let dc=-2;dc<=2;dc++){
+          const nr=tr+dr,nc=tc+dc;
+          if(inBounds(nr,nc)&&aiHitGrid[nr][nc]===null) near.add(`${nr},${nc}`);
+        }
+      const pool=[...near].map(k=>k.split(',').map(Number));
+      const cbPool=pool.filter(([r,c])=>(r+c)%2===0);
+      if(cbPool.length) return cbPool[Math.floor(Math.random()*cbPool.length)];
+      if(pool.length) return pool[Math.floor(Math.random()*pool.length)];
+    }
+    // Priority 3: checkerboard fallback
     const pool=[];
     for(let r=0;r<12;r++) for(let c=0;c<12;c++)
       if(aiHitGrid[r][c]===null&&(r+c)%2===0) pool.push([r,c]);
     if(pool.length) return pool[Math.floor(Math.random()*pool.length)];
   }
+  // Easy/medium fallback: random unsearched
   const pool=[];
   for(let r=0;r<12;r++) for(let c=0;c<12;c++)
     if(aiHitGrid[r][c]===null) pool.push([r,c]);
@@ -478,20 +599,16 @@ function doAiItems(state){
     s={...s,aiShopDisabledRounds:s.aiShopDisabledRounds-1};
     logs.push({who:'ai',text:`Shop locked by spy detonation (${s.aiShopDisabledRounds} turn${s.aiShopDisabledRounds!==1?'s':''} left).`});
   } else {
-    if(s.aiDifficulty==='medium'){
-      for(const id of ['pirates','emp']){
-        const item=SHOP_ITEMS.find(i=>i.id===id);
-        if(s.aiSr>=item.cost){bought=item;break;}
-      }
-    } else {
-      for(const id of ['torpedo','pirates','laser','emp']){
-        const item=SHOP_ITEMS.find(i=>i.id===id);
-        if(s.aiSr>=item.cost){bought=item;break;}
-      }
+    // Medium gets laser; hard prioritises laser over pirates (more surgical)
+    const buyList=s.aiDifficulty==='medium'
+      ?['pirates','laser','emp']
+      :['torpedo','laser','pirates','emp'];
+    for(const id of buyList){
+      const item=SHOP_ITEMS.find(i=>i.id===id);
+      if(s.aiSr>=item.cost){bought=item;break;}
     }
     if(bought){
       s={...s,aiSr:s.aiSr-bought.cost,aiInventory:[...s.aiInventory,{...bought,iid:Date.now()+Math.random()}]};
-      // Spy becomes 'used' once AI makes a purchase after finding it
       if(s.spy?.status==='found') s={...s,spy:{...s.spy,status:'used'}};
     }
   }
@@ -501,72 +618,190 @@ function doAiItems(state){
   s={...s,aiInventory:[]};
   for(const item of toUse){
     if(item.id==='emp'){
+      // Hold EMP if player has very little territory — not worth the stun
+      if(s.territory<4){s={...s,aiInventory:[...s.aiInventory,item]};continue;}
       s={...s,playerStunned:true};
       logs.push({who:'ai',text:'Used EMP — your next turn is stunned!'});
     } else if(item.id==='pirates'){
+      if(s.territory<=0){s={...s,aiInventory:[...s.aiInventory,item]};continue;}
       const t=Math.max(0,s.territory-1);
-      s={...s,territory:t,gameOver:t===0||s.gameOver,winner:t===0?'ai':s.winner};
+      const newYG=cloneGrid(s.yourGrid);
+      outer2: for(let r=0;r<12;r++) for(let c=0;c<12;c++){
+        if(newYG[r][c].type==='territory'){newYG[r][c]=mkCell('empty');break outer2;}
+      }
+      const newAiOwn=autoPlaceAiTerritory(cloneGrid(s.aiOwnGrid),1);
+      s={...s,territory:t,yourGrid:newYG,aiTerritory:s.aiTerritory+1,aiOwnGrid:newAiOwn,
+        gameOver:t===0||s.gameOver,winner:t===0?'ai':s.winner};
       logs.push({who:'ai',text:`Used Pirates — stole 1 territory tile. Your territory: ${t}${t===0?' — YOU LOSE!':''}`});
       if(t===0) return {state:s,logs};
     } else if(item.id==='laser'){
-      const tgt=pickAiTarget(s);
+      // Prefer destroying a KNOWN territory tile (surgical + triggers chain pruning)
+      // Only use aiHitGrid — no peeking at yourGrid
+      const terrTargets=[];
+      for(let r=0;r<12;r++) for(let c=0;c<12;c++)
+        if(s.aiHitGrid[r][c]?.result==='territory')
+          terrTargets.push([r,c]);
+      const tgt=terrTargets.length
+        ?terrTargets[Math.floor(Math.random()*terrTargets.length)]
+        :pickAiTarget(s);
       if(tgt){
         const aiBase=`${COLS[s.aiSsC]}${s.aiSsR+1}`;
         const {state:ns,msg}=applyAiSearch(s,tgt[0],tgt[1],true);
         s=ns;
         logs.push({who:'ai',text:`Laser from ${aiBase}: ${msg}`});
+        if(s.gameOver) return {state:s,logs};
       }
     } else if(item.id==='torpedo'){
+      // Score centers: known territory in blast zone = 3pts, unknown = 1pt
       const centers=[];
       for(let r=1;r<11;r++) for(let c=1;c<11;c++){
-        let cnt=0;
-        for(let dr=-1;dr<=1;dr++) for(let dc=-1;dc<=1;dc++)
-          if(s.aiHitGrid[r+dr][c+dc]===null) cnt++;
-        if(cnt>0) centers.push({r,c,cnt});
+        let unknownCnt=0,terrCnt=0;
+        for(let dr=-1;dr<=1;dr++) for(let dc=-1;dc<=1;dc++){
+          const h=s.aiHitGrid[r+dr][c+dc];
+          if(h===null) unknownCnt++;
+          else if(h.result==='territory') terrCnt++;
+        }
+        const score=terrCnt*3+unknownCnt;
+        if(score>0) centers.push({r,c,score});
       }
       if(centers.length){
-        centers.sort((a,b)=>b.cnt-a.cnt);
+        centers.sort((a,b)=>b.score-a.score);
         const {r:cr,c:cc}=centers[0];
-        const aiBase=`${COLS[s.aiSsC]}${s.aiSsR+1}`;
-        // Center cell: if it hits territory/starting → instant win
-        if(s.aiHitGrid[cr][cc]===null){
-          const centerCell=s.yourGrid[cr][cc];
-          if(centerCell.type==='territory'||centerCell.type==='starting'){
-            const newHG=s.aiHitGrid.map(r=>[...r]);
-            newHG[cr][cc]={result:'territory'};
-            s={...s,aiHitGrid:newHG,gameOver:true,winner:'ai'};
-            logs.push({who:'ai',text:`Torpedo from ${aiBase} — center hit at ${COLS[cc]}${cr+1}! Game over.`});
-            return {state:s,logs};
-          }
-        }
-        const hits=[];
-        for(let dr=-1;dr<=1;dr++) for(let dc=-1;dc<=1;dc++){
-          const tr=cr+dr,tc=cc+dc;
-          const isCenter=dr===0&&dc===0;
-          if(!inBounds(tr,tc)||s.aiHitGrid[tr][tc]!==null) continue;
-          const {state:ns,result}=applyAiSearch(s,tr,tc,!isCenter);
-          s=ns;
-          if(result!=='miss') hits.push(`${COLS[tc]}${tr+1}`);
-        }
-        logs.push({who:'ai',text:`Torpedo from ${aiBase} at ${COLS[cc]}${cr+1}! Hits: ${hits.length?hits.join(', '):'none'}.`});
+        s={...s,pendingAiTorpedo:{row:cr,col:cc},pendingSfx:'alarm'};
+        logs.push({who:'ai',text:`${botName(s.aiDifficulty)} locked torpedo on ${COLS[cc]}${cr+1}! You have one last move.`});
       }
     }
   }
+
+  // Hard AI: launch territory attack when stronger and enemy location is known
+  if(s.aiDifficulty==='hard'&&!s.pendingAiTorpedo&&!s.pendingAiAttack&&s.aiTerritory>s.territory){
+    // Only use aiHitGrid — no peeking at yourGrid
+    const knownTerr=[];
+    for(let r=0;r<12;r++) for(let c=0;c<12;c++)
+      if(s.aiHitGrid[r][c]?.result==='territory')
+        knownTerr.push([r,c]);
+    if(knownTerr.length){
+      const [ar,ac]=knownTerr[Math.floor(Math.random()*knownTerr.length)];
+      s={...s,pendingAiAttack:{row:ar,col:ac},pendingSfx:'alarm'};
+      logs.push({who:'ai',text:`${botName(s.aiDifficulty)} locked ATTACK on ${COLS[ac]}${ar+1} — your last move before impact!`});
+    }
+  }
+
   return {state:s,logs};
 }
 
 function doAiMove(prev){
+  // Decrement player's shop-disabled counter (their turn just ended)
+  prev={...prev,shopDisabledRounds:Math.max(0,(prev.shopDisabledRounds||0)-1)};
   if(prev.aiStunned){
     return {...prev,aiStunned:false,turn:'you',
       log:[{who:'ai',text:`${botName(prev.aiDifficulty)} was stunned by EMP — turn skipped.`},...prev.log],
-      pendingToast:{text:`${botName(prev.aiDifficulty)} stunned — turn skipped!`,color:'#ffaa00'}};
+      pendingToast:{text:`${botName(prev.aiDifficulty)} stunned. Turn skipped.`,color:'#ffaa00'}};
+  }
+  // Decoy panic: AI reacts to fake attack signal, then reveal
+  if(prev.pendingDecoy){
+    const botN=botName(prev.aiDifficulty);
+    let s=prev;
+    const panicLogs=[];
+    // Medium/Hard: if AI has EMP, panic-use it (wasted on a fake!)
+    if(prev.aiDifficulty!=='easy'){
+      const empIdx=(prev.aiInventory||[]).findIndex(i=>i==='emp');
+      if(empIdx>=0){
+        const newInv=[...prev.aiInventory];
+        newInv.splice(empIdx,1);
+        s={...s,aiInventory:newInv,playerStunned:true};
+        panicLogs.push({who:'ai',text:`${botN} panicked — used EMP in response to the attack warning!`});
+      }
+    }
+    // Also make a search move (panic shot)
+    const panicTarget=pickAiTarget(s);
+    if(panicTarget){
+      const {state:s2,result,msg}=applyAiSearch(s,panicTarget[0],panicTarget[1]);
+      s=s2;
+      panicLogs.push({who:'ai',text:`${botN} (panicking): ${msg}`});
+      if(s.gameOver) return {...s,pendingDecoy:null,turn:'you',log:[...panicLogs,...prev.log],
+        pendingToast:{text:`${botN} wins during panic move. You lose.`,color:'#cc4444'}};
+    }
+    const revealMsg=`Fake attack from ${prev.pendingDecoy.from} was a decoy. No damage done.`;
+    return {...s,pendingDecoy:null,turn:'you',
+      log:[{who:'you',text:revealMsg},...panicLogs,...prev.log],
+      pendingToast:{text:`Fake attack! ${botN} wasted their move.`,color:'#aaaa22'}};
+  }
+  // Phase 2a: Execute locked AI attack
+  if(prev.pendingAiAttack){
+    const {row,col}=prev.pendingAiAttack;
+    const playerCell=prev.yourGrid[row][col];
+    const isTerritory=playerCell&&(playerCell.type==='territory'||playerCell.type==='starting');
+    const isStronger=prev.aiTerritory>prev.territory;
+    const aiBase=`${COLS[prev.aiSsC]}${prev.aiSsR+1}`;
+    if(!isTerritory||!isStronger){
+      const reason=!isTerritory?'no territory there — miss':'territory equal or weaker — repelled';
+      const msg=`${botName(prev.aiDifficulty)} attack from ${aiBase} on ${COLS[col]}${row+1}: ${reason}.`;
+      return {...prev,pendingAiAttack:null,turn:'you',
+        log:[{who:'ai',text:msg},...prev.log],
+        pendingToast:{text:msg,color:'#554433'}};
+    }
+    const {state:ns}=applyAiSearch(prev,row,col,true);
+    const msg=`${botName(prev.aiDifficulty)} attack from ${aiBase} struck ${COLS[col]}${row+1} — territory destroyed!`;
+    return {...ns,pendingAiAttack:null,turn:'you',
+      log:[{who:'ai',text:msg},...prev.log],
+      pendingToast:{text:ns.gameOver?'Attack destroyed your base. You lose.':msg,
+        color:ns.gameOver?'#cc4444':'#cc4422'}};
+  }
+  // Phase 2b: Fire locked AI torpedo
+  if(prev.pendingAiTorpedo){
+    const {row:cr,col:cc}=prev.pendingAiTorpedo;
+    const aiBase=`${COLS[prev.aiSsC]}${prev.aiSsR+1}`;
+    let s={...prev,pendingAiTorpedo:null};
+    // Center hit → instant win
+    if(s.aiHitGrid[cr][cc]===null){
+      const centerCell=s.yourGrid[cr][cc];
+      if(centerCell.type==='territory'||centerCell.type==='starting'){
+        const newHG=s.aiHitGrid.map(r=>[...r]);
+        newHG[cr][cc]={result:'territory'};
+        s={...s,aiHitGrid:newHG,gameOver:true,winner:'ai'};
+        const fireMsg=`Torpedo from ${aiBase} — center hit at ${COLS[cc]}${cr+1}! Game over.`;
+        return {...s,turn:'you',log:[{who:'ai',text:fireMsg},...prev.log],
+          pendingToast:{text:`${botName(s.aiDifficulty)} torpedo: center hit. You lose.`,color:'#cc4444'}};
+      }
+    }
+    // 3×3 blast
+    const hits=[];
+    for(let dr=-1;dr<=1;dr++) for(let dc=-1;dc<=1;dc++){
+      const tr=cr+dr,tc=cc+dc;
+      const isCenter=dr===0&&dc===0;
+      if(!inBounds(tr,tc)||s.aiHitGrid[tr][tc]!==null) continue;
+      const {state:ns,result}=applyAiSearch(s,tr,tc,!isCenter);
+      s=ns;
+      if(result!=='miss') hits.push(`${COLS[tc]}${tr+1}`);
+    }
+    const fireMsg=`Torpedo from ${aiBase} at ${COLS[cc]}${cr+1}! Hits: ${hits.length?hits.join(', '):'none'}.`;
+    return {...s,turn:'you',log:[{who:'ai',text:fireMsg},...prev.log],
+      pendingToast:{text:s.gameOver?`${botName(s.aiDifficulty)} torpedo fired. You lose.`:`${botName(s.aiDifficulty)} torpedo fired.`,color:s.gameOver?'#cc4444':'#8855ff'}};
+  }
+  // Medium/hard AI detects and destroys player's prepped silo
+  if(prev.siloPrepped&&prev.aiDifficulty!=='easy'){
+    const {r,c}=prev.siloPrepped;
+    const newYG=cloneGrid(prev.yourGrid);
+    newYG[r][c]=mkCell('empty');
+    const newHG=prev.aiHitGrid.map(row=>[...row]);
+    newHG[r][c]={result:'territory'};
+    const msg=`${botName(prev.aiDifficulty)} detected armed silo at ${COLS[c]}${r+1} and destroyed it!`;
+    return {...prev,yourGrid:newYG,aiHitGrid:newHG,siloPrepped:null,turn:'you',
+      log:[{who:'ai',text:msg},...prev.log],
+      pendingToast:{text:msg,color:'#cc4433'}};
   }
   const {state:s1,logs:itemLogs}=doAiItems(prev);
   if(s1.gameOver) return {...s1,turn:'you',log:[...itemLogs,...prev.log],pendingToast:{text:`${botName(s1.aiDifficulty)} wins! Game over.`,color:'#cc4444'}};
+  // If a new attack was locked this turn, that IS the AI's action — skip regular search
+  if(s1.pendingAiAttack&&!prev.pendingAiAttack){
+    return {...s1,turn:'you',log:[...itemLogs,...prev.log],
+      pendingToast:{text:`${botName(s1.aiDifficulty)} locked an ATTACK. Your last move.`,color:'#cc4422'}};
+  }
   const target=pickAiTarget(s1);
   if(!target) return {...s1,turn:'you',log:[...itemLogs,...prev.log]};
   const {state:s2,result,msg}=applyAiSearch(s1,target[0],target[1]);
-  if(s2.gameOver) return {...s2,turn:'you',log:[{who:'ai',text:msg},...itemLogs,...prev.log],pendingToast:{text:`${botName(s2.aiDifficulty)} reaches 21 tiles — You lose.`,color:'#cc4444'}};
+  if(s2.gameOver) return {...s2,turn:'you',log:[{who:'ai',text:msg},...itemLogs,...prev.log],pendingToast:{text:`${botName(s2.aiDifficulty)} reaches 21 tiles. You lose.`,color:'#cc4444'}};
   let aiTargetQueue=s2.aiTargetQueue;
   if(s2.aiDifficulty!=='easy'){
     aiTargetQueue=aiTargetQueue.filter(([r,c])=>s2.aiHitGrid[r][c]===null);
@@ -584,6 +819,14 @@ function doAiMove(prev){
 
 function swapPvpPlayers(prev){
   const {p2}=prev;
+  const newActive=prev.activePlayer===1?2:1;
+  const pd=prev.pendingDecoy||null;
+  // Reveal decoy only when returning to the attacker AND they won't be immediately stunned by EMP
+  const isReveal=pd&&pd.attackerPlayer===newActive&&!prev.opponentStunned;
+  // First time victim sees the fake attack (not shown yet)
+  const isVictimTurn=pd&&pd.attackerPlayer!==newActive&&!pd.shown;
+  const fakeMsg=pd?`⚠ Attack from ${pd.from} → ${pd.to} — enemy territory hit at ${pd.to}!`:null;
+
   const snap={
     yourGrid:prev.yourGrid,
     opponentGrid:prev.opponentGrid,
@@ -597,13 +840,19 @@ function swapPvpPlayers(prev){
     placementRemaining:prev.placementRemaining,
     stationMode:false,rerootMode:false,
     shieldMode:false,shieldedCells:prev.shieldedCells,
-    siloPlaceMode:false,siloActive:null,
+    siloPlaceMode:false,siloActive:null,siloPrepped:prev.siloPrepped||null,
     detectedAlarm:prev.detectedAlarm||false,
     spy:prev.spy,
     spyPlaceMode:false,spyPanelOpen:false,
-    // Decrement shop-disabled counter when this player's turn ends
     shopDisabledRounds:Math.max(0,(prev.shopDisabledRounds||0)-1),
   };
+
+  const newLog=isReveal
+    ?[{who:`p${pd.attackerPlayer}`,text:`Decoy revealed — fake attack from ${pd.from} was a bluff. No damage done.`},...prev.log]
+    :isVictimTurn
+    ?[{who:`p${newActive}`,text:fakeMsg},...prev.log]
+    :prev.log;
+
   return {
     ...prev,
     yourGrid:p2.yourGrid,
@@ -620,19 +869,26 @@ function swapPvpPlayers(prev){
     rerootMode:p2.rerootMode||false,
     shieldMode:p2.shieldMode||false,
     shieldedCells:p2.shieldedCells||[],
-    siloPlaceMode:p2.siloPlaceMode||false,siloActive:p2.siloActive||null,
+    siloPlaceMode:p2.siloPlaceMode||false,siloActive:p2.siloActive||null,siloPrepped:p2.siloPrepped||null,
+    pendingDecoy:isReveal?null:isVictimTurn?{...pd,shown:true}:pd,
     detectedAlarm:p2.detectedAlarm||false,
     spy:p2.spy||null,
     spyPlaceMode:false,spyPanelOpen:false,
     shopDisabledRounds:p2.shopDisabledRounds||0,
     p2:snap,
     activeAction:null,actionInput:'',actionError:'',actionMessage:'',actionWarned:null,
-    activePlayer:prev.activePlayer===1?2:1,
+    activePlayer:newActive,
     pvpPendingPass:false,
     playerStunned:prev.opponentStunned,
     opponentStunned:false,
     turn:'you',
     viewMode:p2.placementMode?'your':'hit',
+    log:newLog,
+    ...(isReveal
+      ?{pendingToast:{text:`Fake attack! Decoy from ${pd.from} — no damage done.`,color:'#aaaa22'}}
+      :isVictimTurn
+      ?{pendingToast:{text:fakeMsg,color:'#cc4422'}}
+      :{}),
   };
 }
 
@@ -687,9 +943,15 @@ function initGame(mode=false){
     aiStunned: false, playerStunned: false,
     stationMode: false, rerootMode: false,
     pendingToast: null,
-    gameOver: false, winner: null,
+    pendingAttack: null,
+    pendingSilo: null,
+    pendingAiTorpedo: null,
+    pendingAiAttack: null,
+    pendingSfx: null,
+    gameOver: false, winner: null, winReason: null,
     shieldedCells: [], shieldMode: false,
-    siloPlaceMode: false, siloActive: null,
+    siloPlaceMode: false, siloActive: null, siloPrepped: null,
+    pendingDecoy: null,
     actionWarned: null,
     detectedAlarm: false,
     spy: null, spyPlaceMode: false, spyPanelOpen: false,
@@ -713,13 +975,30 @@ function App(){
   const [pvpCountdown,setPvpCountdown]=useState(5);
   const pvpCountRef=useRef(null);
   const [radarCell,setRadarCell]=useState(null);
+  const [radarRevealed,setRadarRevealed]=useState(false);
   const radarTimerRef=useRef(null);
+  const radarRevealTimerRef=useRef(null);
   const submitSearchRef=useRef(null);
+  const [spectateMode,setSpectateMode]=useState(false);
+  const [spectateViewOpp,setSpectateViewOpp]=useState(false);
 
   const addToast=useCallback((text,color='#aaaacc')=>{
     const id=Date.now()+Math.random();
     setToasts(prev=>[...prev,{id,text,color}]);
     setTimeout(()=>setToasts(prev=>prev.filter(t=>t.id!==id)),2600);
+  },[]);
+
+
+  const [sfxLabel,setSfxLabel]=useState('');
+  const sfxTimerRef=useRef(null);
+  useEffect(()=>{
+    const handler=e=>{
+      setSfxLabel(e.detail);
+      clearTimeout(sfxTimerRef.current);
+      sfxTimerRef.current=setTimeout(()=>setSfxLabel(''),1400);
+    };
+    window.addEventListener('sfx',handler);
+    return ()=>window.removeEventListener('sfx',handler);
   },[]);
 
   const startGame=useCallback((aiMode)=>{
@@ -767,12 +1046,25 @@ function App(){
   },[gs.pendingToast]);
 
   useEffect(()=>{
+    if(!gs.pendingSfx) return;
+    switch(gs.pendingSfx){
+      case 'hit':      playHit();      break;
+      case 'miss':     playMiss();     break;
+      case 'resource': playResource(); break;
+      case 'alarm':    playAlarm();    break;
+    }
+    setGs(p=>({...p,pendingSfx:null}));
+  },[gs.pendingSfx]);
+
+  // decoyAlert removed — decoy reveal now handled in swapPvpPlayers (PvP) and doAiMove (AI)
+
+  useEffect(()=>{
     if((gs.activeAction||gs.siloActive) && inputRef.current) inputRef.current.focus();
   },[gs.activeAction,gs.siloActive]);
 
   useEffect(()=>{
     if(!gs.aiMode||gs.turn!=='ai'||gs.gameOver) return;
-    const t=setTimeout(()=>setGs(prev=>doAiMove(prev)),5000);
+    const t=setTimeout(()=>setGs(prev=>doAiMove(prev)),3000);
     return ()=>clearTimeout(t);
   },[gs.turn,gs.aiMode,gs.gameOver]);
 
@@ -788,7 +1080,7 @@ function App(){
             if(g.gameOver||g.turn!=='you') return g;
             return {...g,gameOver:true,winner:'ai',
               log:[{who:'you',text:'Time ran out!'},...g.log],
-              pendingToast:{text:'Time ran out — you lose!',color:'#cc4444'}};
+              pendingToast:{text:'Time ran out. You lose.',color:'#cc4444'}};
           });
           return 0;
         }
@@ -838,8 +1130,9 @@ function App(){
           p2: newP2,
           gameOver: true,
           winner: winWho,
-          log:[{who:winWho,text:`Reached 21 territory tiles — DOMINATION! ${prev.pvpMode?`Player ${prev.activePlayer} wins!`:'YOU WIN!'}`},...prev.log],
-          pendingToast:{text:`21 tiles reached — DOMINATION! ${prev.pvpMode?`Player ${prev.activePlayer} wins!`:'YOU WIN!'}`,color:'#44ff44'},
+          winReason: prev.pvpMode?`Player ${prev.activePlayer} reached 21 territory tiles.`:null,
+          log:[{who:winWho,text:`21 tiles reached. ${prev.pvpMode?`Player ${prev.activePlayer} wins!`:'YOU WIN!'}`},...prev.log],
+          pendingToast:{text:`21 tiles reached. ${prev.pvpMode?`Player ${prev.activePlayer} wins!`:'YOU WIN!'}`,color:'#44ff44'},
         };
       }
       return {
@@ -916,9 +1209,15 @@ function App(){
       // PvP: update inactive player's p2 snapshot for spy + territory alarm
       let newP2Search=prev.p2;
       if(prev.pvpMode&&prev.p2){
+        // Sync resource depletion to P2's own yourGrid so they see it gone on their turn
+        if(result==='cr'||result==='br'||result==='sr'){
+          const p2YG=cloneGrid(prev.p2.yourGrid);
+          p2YG[row][col]={...p2YG[row][col],type:'empty',collected:true};
+          newP2Search={...newP2Search,yourGrid:p2YG};
+        }
         if(isSpy){
           // Sync spy 'found' status and yourGrid collected flag to inactive player's snapshot
-          const p2YG=cloneGrid(prev.p2.yourGrid);
+          const p2YG=cloneGrid(newP2Search.yourGrid);
           p2YG[row][col]={...p2YG[row][col],collected:true};
           newP2Search={...newP2Search,yourGrid:p2YG,
             spy:prev.p2.spy?.status==='placed'?{...prev.p2.spy,status:'found'}:prev.p2.spy};
@@ -942,6 +1241,7 @@ function App(){
         turn: prev.aiMode&&!placementMode?'ai':'you',
         pvpPendingPass: prev.pvpMode&&!placementMode,
         pendingToast:{text:msg,color:toastColor},
+        pendingSfx: result==='territory'?'hit':result==='miss'?'miss':'resource',
       };
     });
   },[]);
@@ -957,20 +1257,40 @@ function App(){
       setGs(p=>({...p,actionError:`${COLS[coord.col]}${coord.row+1} already searched — press Go again to confirm.`,actionWarned:p.actionInput}));
       return;
     }
-    setRadarCell({r:coord.row,c:coord.col});
-  },[gs.actionInput,gs.hitGrid,gs.actionWarned]);
+    // Pre-compute result for mid-sweep reveal
+    const oppCell=gs.opponentGrid[coord.row][coord.col];
+    const shielded=gs.pvpMode&&(gs.p2?.shieldedCells||[]).some(s=>s.r===coord.row&&s.c===coord.col);
+    const isSpy=gs.pvpMode&&oppCell.type==='spy'&&!oppCell.collected;
+    let preview='Miss'; let previewColor='#4a6050';
+    if(!shielded){
+      if(isSpy||oppCell.type==='sr_res'){preview='SR Found!';previewColor='#5566ee';}
+      else if(oppCell.type==='cr'){preview='CR Found!';previewColor='#44aa55';}
+      else if(oppCell.type==='br'){preview='BR Found!';previewColor='#cc4422';}
+      else if(oppCell.type==='starting'||oppCell.type==='territory'||oppCell.type==='station'){preview='Territory!';previewColor='#aaaa22';}
+    }
+    setRadarRevealed(false);
+    setRadarCell({r:coord.row,c:coord.col,preview,previewColor});
+  },[gs.actionInput,gs.hitGrid,gs.actionWarned,gs.opponentGrid,gs.pvpMode,gs.p2]);
 
   useEffect(()=>{
     if(!radarCell) return;
+    // Angle from grid center to target cell (clockwise from top = 0°)
+    const dc=radarCell.c-5.5, dr=radarCell.r-5.5;
+    let angle=Math.atan2(dc,-dr)*180/Math.PI;
+    if(angle<0) angle+=360;
+    const revealMs=(angle/360)*1100;
+    radarRevealTimerRef.current=setTimeout(()=>setRadarRevealed(true),revealMs);
     radarTimerRef.current=setTimeout(()=>{
       setRadarCell(null);
+      setRadarRevealed(false);
       submitSearchRef.current();
     },1100);
-    return ()=>clearTimeout(radarTimerRef.current);
+    return ()=>{clearTimeout(radarTimerRef.current);clearTimeout(radarRevealTimerRef.current);};
   },[radarCell]);
 
   // Attack — win condition: your territory vs opponent territory. No tile destruction.
-  const submitAttack=useCallback(()=>{
+  // Phase 1 — lock in target, spend current turn; opponent gets one last move
+  const prepareAttack=useCallback(()=>{
     setGs(prev=>{
       if(prev.playerStunned){
         return {...prev,playerStunned:false,activeAction:null,actionInput:'',actionError:'',
@@ -982,10 +1302,40 @@ function App(){
       const coord=parseCoord(prev.actionInput);
       if(!coord) return {...prev,actionError:'Invalid. Use A1–L12 (e.g. D4)'};
       const {row,col}=coord;
-      if(prev.hitGrid[row][col]!==null){
-        if(prev.actionWarned!==prev.actionInput)
-          return {...prev,actionError:`${COLS[col]}${row+1} already targeted — press Go/Enter again to attack anyway.`,actionWarned:prev.actionInput};
+      const hitResult=prev.hitGrid[row][col];
+      if(!hitResult)
+        return {...prev,actionError:`${COLS[col]}${row+1} hasn't been searched — search it first before attacking.`};
+      if(hitResult.result!=='territory')
+        return {...prev,actionError:`${COLS[col]}${row+1} shows no territory — can only attack known territory tiles.`};
+      const who=prev.pvpMode?`p${prev.activePlayer}`:'you';
+      const coordStr=`${COLS[col]}${row+1}`;
+      const msg=`Attack locked on ${coordStr}.`;
+      return {
+        ...prev,
+        pendingAttack:{row,col,attackerPlayer:prev.activePlayer||0},
+        activeAction:null,actionInput:'',actionError:'',actionWarned:null,
+        actionMessage:msg,
+        log:[{who,text:msg},...prev.log],
+        turn:prev.aiMode?'ai':'you',
+        pvpPendingPass:prev.pvpMode,
+        pendingToast:{text:`Attack locked on ${coordStr}.`,color:'#cc6622'},
+        pendingSfx:'alarm',
+      };
+    });
+  },[]);
+
+  // Phase 2 — execute the locked attack
+  const confirmAttack=useCallback(()=>{
+    setGs(prev=>{
+      if(!prev.pendingAttack) return prev;
+      if(prev.playerStunned){
+        return {...prev,playerStunned:false,pendingAttack:null,activeAction:null,actionInput:'',actionError:'',
+          turn:prev.aiMode?'ai':'you',
+          pvpPendingPass:prev.pvpMode,
+          log:[{who:prev.pvpMode?`p${prev.activePlayer}`:'you',text:'Stunned by EMP — pending attack cancelled!'},...prev.log],
+          pendingToast:{text:'Stunned. Attack cancelled.',color:'#ff6600'}};
       }
+      const {row,col}=prev.pendingAttack;
       const playerBase=`${COLS[prev.ssC]}${prev.ssR+1}`;
       const oppCell=prev.opponentGrid[row][col];
       const isTerritory=oppCell&&(oppCell.type==='territory'||oppCell.type==='starting');
@@ -998,41 +1348,47 @@ function App(){
         const isStronger=prev.territory>defStationSize;
         if(!isStronger){
           newHit[row][col]={result:'miss'};
-          const msg=`Attack from ${playerBase} → ${COLS[col]}${row+1} — station held! (station: ${defStationSize}, your territory: ${prev.territory})`;
-          return {...prev,hitGrid:newHit,
+          const msg=`Attack from ${playerBase}. Station resisted. (station: ${defStationSize}, your territory: ${prev.territory})`;
+          return {...prev,hitGrid:newHit,pendingAttack:null,
             activeAction:null,actionInput:'',actionError:'',actionMessage:msg,actionWarned:null,
             log:[{who,text:msg},...prev.log],
             turn:prev.aiMode?'ai':'you',
             pvpPendingPass:prev.pvpMode,
-            pendingToast:{text:`Station repelled your attack! Station size: ${defStationSize}`,color:'#009999'}};
+            pendingToast:{text:`Station resisted. Station size: ${defStationSize}`,color:'#009999'}};
         }
-        // Destroy station tile — no win condition
-        newHit[row][col]={result:'station'};
+        // Destroy ALL station tiles
         const newOppGrid=cloneGrid(prev.opponentGrid);
-        newOppGrid[row][col]=mkCell('empty');
+        for(let sr=0;sr<12;sr++) for(let sc=0;sc<12;sc++){
+          if(newOppGrid[sr][sc].type==='station'){
+            newHit[sr][sc]={result:'station'};
+            newOppGrid[sr][sc]=mkCell('empty');
+          }
+        }
         if(prev.pvpMode){
           const newP2YG=cloneGrid(prev.p2.yourGrid);
-          newP2YG[row][col]=mkCell('empty');
+          for(let sr=0;sr<12;sr++) for(let sc=0;sc<12;sc++){
+            if(newP2YG[sr][sc].type==='station') newP2YG[sr][sc]=mkCell('empty');
+          }
           const newP2={...prev.p2,yourGrid:newP2YG};
-          const msg=`Attack from ${playerBase} → ${COLS[col]}${row+1} — station tile destroyed! (station now: ${defStationSize-1})`;
-          return {...prev,hitGrid:newHit,opponentGrid:newOppGrid,p2:newP2,
+          const msg=`Attack from ${playerBase}. Station destroyed. (${defStationSize} tiles)`;
+          return {...prev,hitGrid:newHit,opponentGrid:newOppGrid,p2:newP2,pendingAttack:null,
             activeAction:null,actionInput:'',actionError:'',actionMessage:msg,actionWarned:null,
             log:[{who,text:msg},...prev.log],
             pvpPendingPass:true,
-            pendingToast:{text:`Station tile destroyed! Opponent station: ${defStationSize-1}`,color:'#00aacc'}};
+            pendingToast:{text:`Station destroyed. (${defStationSize} tiles)`,color:'#00aacc'}};
         }
-        const msg=`Attack from ${playerBase} → ${COLS[col]}${row+1} — opponent station tile destroyed!`;
-        return {...prev,hitGrid:newHit,opponentGrid:newOppGrid,
+        const msg=`Attack from ${playerBase}. Opponent station destroyed. (${defStationSize} tiles)`;
+        return {...prev,hitGrid:newHit,opponentGrid:newOppGrid,pendingAttack:null,
           activeAction:null,actionInput:'',actionError:'',actionMessage:msg,actionWarned:null,
           log:[{who:'you',text:msg},...prev.log],
-          turn:'ai',
-          pendingToast:{text:'Station tile destroyed!',color:'#00aacc'}};
+          turn:prev.aiMode?'ai':'you',
+          pendingToast:{text:`Station destroyed. (${defStationSize} tiles)`,color:'#00aacc'}};
       }
 
       if(!isTerritory){
         newHit[row][col]={result:'miss'};
-        const msg=`Attack from ${playerBase} → ${COLS[col]}${row+1} — no territory here, miss.`;
-        return {...prev,hitGrid:newHit,
+        const msg=`Attack from ${playerBase}. No territory at ${COLS[col]}${row+1}. Miss.`;
+        return {...prev,hitGrid:newHit,pendingAttack:null,
           activeAction:null,actionInput:'',actionError:'',actionMessage:msg,actionWarned:null,
           log:[{who,text:msg},...prev.log],
           turn:prev.aiMode?'ai':'you',
@@ -1040,46 +1396,54 @@ function App(){
           pendingToast:{text:'Attack: no territory there.',color:'#555555'}};
       }
 
-      // Shields and indestructibility are irrelevant — this is a territory battle.
       const oppTerritory=prev.pvpMode?prev.p2.territory:prev.aiTerritory;
       const isStronger=prev.territory>oppTerritory;
+      const isDraw=prev.territory===oppTerritory;
       newHit[row][col]={result:isStronger?'territory':'miss'};
 
+      if(isDraw){
+        const msg=`Attack from ${playerBase}. Equal territory (${prev.territory} each). Mutual destruction. Both sides fall.`;
+        return {...prev,hitGrid:newHit,pendingAttack:null,
+          activeAction:null,actionInput:'',actionError:'',actionMessage:msg,actionWarned:null,
+          log:[{who,text:msg},...prev.log],
+          gameOver:true,winner:'draw',
+          pvpPendingPass:false,
+          pendingToast:{text:`Equal territory. MUTUAL DESTRUCTION. Both sides lose.`,color:'#aa8833'}};
+      }
+
       if(isStronger){
-        // YOU WIN — your territory overwhelms theirs
-        const msg=`Attack from ${playerBase} → ${COLS[col]}${row+1} — your territory (${prev.territory}) overwhelms opponent (${oppTerritory})! VICTORY!`;
+        const msg=`Attack from ${playerBase}. Your territory (${prev.territory}) vs opponent (${oppTerritory}). Victory.`;
         if(prev.pvpMode){
-          return {...prev,hitGrid:newHit,
+          return {...prev,hitGrid:newHit,pendingAttack:null,
             activeAction:null,actionInput:'',actionError:'',actionMessage:msg,actionWarned:null,
-            gameOver:true,winner:who,
+            gameOver:true,winner:who,winReason:`MAX(21) territory reached. ${prev.territory} vs ${oppTerritory} tiles.`,
             log:[{who,text:msg},...prev.log],
             pvpPendingPass:false,
-            pendingToast:{text:`Player ${prev.activePlayer} wins — territory superiority!`,color:'#44ff44'}};
+            pendingToast:{text:`Player ${prev.activePlayer} wins. MAX(21) territory reached.`,color:'#44ff44'}};
         }
-        return {...prev,hitGrid:newHit,
+        return {...prev,hitGrid:newHit,pendingAttack:null,
           activeAction:null,actionInput:'',actionError:'',actionMessage:msg,actionWarned:null,
           gameOver:true,winner:'you',
           log:[{who:'you',text:msg},...prev.log],
           turn:'you',
-          pendingToast:{text:'ATTACK! Territory superior — YOU WIN!',color:'#44ff44'}};
+          pendingToast:{text:'Opponent Territory destroyed: You win!',color:'#44ff44'}};
       } else {
-        // THEY WIN — opponent territory holds, you are defeated
         const loserWinner=prev.pvpMode?(prev.activePlayer===1?'p2':'p1'):'ai';
-        const msg=`Attack from ${playerBase} → ${COLS[col]}${row+1} — opponent's territory (${oppTerritory}) repels yours (${prev.territory})! DEFEATED!`;
+        const msg=`Attack from ${playerBase}. Opponent territory (${oppTerritory}) resisted yours (${prev.territory}). Defeated.`;
         if(prev.pvpMode){
-          return {...prev,hitGrid:newHit,
+          return {...prev,hitGrid:newHit,pendingAttack:null,
             activeAction:null,actionInput:'',actionError:'',actionMessage:msg,actionWarned:null,
-            gameOver:true,winner:loserWinner,
+            gameOver:true,winner:loserWinner,winReason:`Attack resisted. Defender: ${oppTerritory} vs attacker: ${prev.territory} tiles.`,
             log:[{who,text:msg},...prev.log],
             pvpPendingPass:false,
-            pendingToast:{text:`Player ${prev.activePlayer} loses — attack repelled!`,color:'#cc4444'}};
+            pendingToast:{text:`Player ${prev.activePlayer} loses. Attack resisted.`,color:'#cc4444'}};
         }
-        return {...prev,hitGrid:newHit,
+        return {...prev,hitGrid:newHit,pendingAttack:null,
           activeAction:null,actionInput:'',actionError:'',actionMessage:msg,actionWarned:null,
           gameOver:true,winner:'ai',
           log:[{who:'you',text:msg},...prev.log],
           turn:'you',
-          pendingToast:{text:'Attack repelled — DEFEAT!',color:'#cc4444'}};
+          pendingToast:{text:'Attack resisted. Defeat.',color:'#cc4444'}};
       }
     });
   },[]);
@@ -1091,7 +1455,7 @@ function App(){
       // Shop locked by spy detonation
       if(prev.shopDisabledRounds>0){
         return {...prev,shopOpen:false,
-          pendingToast:{text:`Shop locked by spy detonation — ${prev.shopDisabledRounds} turn${prev.shopDisabledRounds!==1?'s':''} remaining!`,color:'#ff4444'}};
+          pendingToast:{text:`Shop locked by spy detonation. ${prev.shopDisabledRounds} turn${prev.shopDisabledRounds!==1?'s':''} remaining.`,color:'#ff4444'}};
       }
       // If inactive player's spy was 'found' and active player now buys, spy becomes 'used'
       const newP2buy=prev.pvpMode&&prev.p2?.spy?.status==='found'
@@ -1116,9 +1480,13 @@ function App(){
     });
   },[]);
 
-  const useItem=useCallback(()=>{
+  const useItem=useCallback((iidOrEvent)=>{
     setGs(prev=>{
-      const item=prev.inventory.find(i=>i.iid===prev.selectedItem);
+      // Block item use during AI's turn (1vBot only)
+      if(prev.aiMode&&prev.turn==='ai') return prev;
+      // Accept a direct iid string (from sidebar Use button) or fall back to selectedItem
+      const iid=typeof iidOrEvent==='string'?iidOrEvent:prev.selectedItem;
+      const item=prev.inventory.find(i=>i.iid===iid);
       if(!item) return prev;
       const consume=inv=>inv.filter(i=>i.iid!==item.iid);
       switch(item.id){
@@ -1126,11 +1494,12 @@ function App(){
           return {...prev,inventory:consume(prev.inventory),selectedItem:null,
             ...(prev.pvpMode
               ?{opponentStunned:true,
-                log:[{who:`p${prev.activePlayer}`,text:'Used EMP — opponent stunned next turn! Bonus move!'},...prev.log],
-                pendingToast:{text:'EMP fired! Opponent stunned. Bonus move!',color:'#ffaa00'}}
+                pvpPendingPass:true,
+                log:[{who:`p${prev.activePlayer}`,text:'EMP used. Opponent stunned. Your move again.'},...prev.log],
+                pendingToast:{text:'EMP used: Opponent stunned, your move again',color:'#ffaa00'}}
               :{aiStunned:true,
-                log:[{who:'you',text:`Used EMP — ${botName(prev.aiDifficulty)} stunned for 1 turn! Bonus move granted.`},...prev.log],
-                pendingToast:{text:`EMP fired! ${botName(prev.aiDifficulty)} skips next turn. Bonus move!`,color:'#ffaa00'}})};
+                log:[{who:'you',text:`EMP used. ${botName(prev.aiDifficulty)} stunned. Your move again.`},...prev.log],
+                pendingToast:{text:`EMP used: ${botName(prev.aiDifficulty)} stunned, your move again`,color:'#ffaa00'}})};
         case 'shield':
           return {...prev,inventory:consume(prev.inventory),selectedItem:null,
             shieldMode:true,viewMode:'your',
@@ -1151,39 +1520,64 @@ function App(){
             const newTerr=Math.max(0,prev.p2.territory-1);
             const won=newTerr===0;
             const newPlacing=(prev.placementRemaining||0)+1;
+            // Remove an actual territory tile from p2's grid (visual sync)
+            const newP2YG=cloneGrid(prev.p2.yourGrid);
+            const newOppGrid=cloneGrid(prev.opponentGrid);
+            let pirateRemoved=false;
+            outer1: for(let r=0;r<12;r++) for(let c=0;c<12;c++){
+              if(newP2YG[r][c].type==='territory'){
+                newP2YG[r][c]=mkCell('empty');
+                newOppGrid[r][c]=mkCell('empty');
+                pirateRemoved=true; break outer1;
+              }
+            }
             return {...prev,inventory:consume(prev.inventory),selectedItem:null,
-              p2:{...prev.p2,territory:newTerr},
+              opponentGrid:newOppGrid,
+              p2:{...prev.p2,territory:newTerr,yourGrid:newP2YG},
               placementMode:true,placementRemaining:newPlacing,viewMode:'your',
               gameOver:won,winner:won?`p${prev.activePlayer}`:prev.winner,
+              winReason:won?`Pirates! Player ${prev.activePlayer} stole opponent's last territory tile.`:prev.winReason,
               pvpPendingPass:false,
               log:[{who:`p${prev.activePlayer}`,text:`Used Pirates — stole 1 territory and gained 1 CR! Opponent: ${newTerr}${won?' — DEFEATED!':''}`},...prev.log],
-              pendingToast:{text:won?'Pirates! Opponent defeated — YOU WIN!':`Pirates! Stole 1 territory — place your CR tile!`,color:'#aa6600'}};
+              pendingToast:{text:won?'Pirates! Opponent defeated. YOU WIN!':'Pirates used. Stole 1 territory for you, click to place it down.',color:'#aa6600'}};
           }
           const newTerr=Math.max(0,prev.aiTerritory-1);
           const won=newTerr===0;
           const newPlacing=(prev.placementRemaining||0)+1;
+          // Sync opponentGrid and aiOwnGrid to reflect the stolen tile
+          const newOppGridP=cloneGrid(prev.opponentGrid);
+          const newAiOwnP=cloneGrid(prev.aiOwnGrid);
+          outer4: for(let r=0;r<12;r++) for(let c=0;c<12;c++){
+            if(newOppGridP[r][c].type==='territory'){
+              newOppGridP[r][c]=mkCell('empty');
+              newAiOwnP[r][c]=mkCell('empty');
+              break outer4;
+            }
+          }
           return {...prev,inventory:consume(prev.inventory),selectedItem:null,
-            aiTerritory:newTerr,gameOver:won,winner:won?'you':prev.winner,
+            aiTerritory:newTerr,opponentGrid:newOppGridP,aiOwnGrid:newAiOwnP,
+            gameOver:won,winner:won?'you':prev.winner,
             placementMode:!won,placementRemaining:won?prev.placementRemaining:newPlacing,viewMode:'your',
             turn:won?'you':'you',
             log:[{who:'you',text:`Used Pirates — stole 1 ${botName(prev.aiDifficulty)} territory and gained 1 CR!${won?' '+botName(prev.aiDifficulty)+' defeated!':''}`},...prev.log],
-            pendingToast:{text:won?`Pirates! ${botName(prev.aiDifficulty)} defeated — YOU WIN!`:`Pirates! Stole 1 territory — place your CR tile!`,color:'#aa6600'}};
+            pendingToast:{text:won?`Pirates! ${botName(prev.aiDifficulty)} defeated. YOU WIN!`:'Pirates used. Stole 1 territory for you, click to place it down.',color:'#aa6600'}};
         }
         case 'laser':
           return {...prev,selectedItem:null,
             activeAction:'laser',viewMode:'hit',
-            pendingToast:{text:'Laser armed — pick a target coordinate',color:'#ff4488'}};
+            pendingToast:{text:'Laser armed. Pick a target coordinate.',color:'#ff4488'}};
         case 'torpedo':
           return {...prev,selectedItem:null,
             siloPlaceMode:true,viewMode:'your',
             pendingToast:{text:'Torpedo Silo: click a highlighted cell adjacent to your territory',color:'#8855ff'}};
         case 'probe': {
           // Scan opponent grid for uncollected resources — reveal coords only, no type info
+          // Spy cells are included so they can appear as decoys in the results
           const oppGrid=prev.opponentGrid;
           const allRes=[];
           for(let r=0;r<12;r++) for(let c=0;c<12;c++){
             const cell=oppGrid[r][c];
-            if((cell.type==='br'||cell.type==='sr_res'||cell.type==='cr')&&!cell.collected)
+            if((cell.type==='br'||cell.type==='sr_res'||cell.type==='cr'||cell.type==='spy')&&!cell.collected)
               allRes.push([r,c]);
           }
           const shuffled=[...allRes].sort(()=>Math.random()-0.5).slice(0,3);
@@ -1202,10 +1596,43 @@ function App(){
           if(!prev.aiMode&&!prev.pvpMode)
             return {...prev,pendingToast:{text:'Spy only works against an opponent!',color:'#ff4444'}};
           if(prev.spy&&prev.spy.status==='placed')
-            return {...prev,pendingToast:{text:'A spy is already deployed — detonate or wait.',color:'#ff4444'}};
+            return {...prev,pendingToast:{text:'A spy is already deployed. Detonate or wait.',color:'#ff4444'}};
           return {...prev,selectedItem:null,
             spyPlaceMode:true,viewMode:'your',
             pendingToast:{text:'Spy Resource: click any empty cell on your grid to plant the decoy',color:'#1a88cc'}};
+        }
+        case 'decoy': {
+          // Pick a random empty tile as the fake source
+          const emptyCells=[];
+          for(let r=0;r<12;r++) for(let c=0;c<12;c++)
+            if(prev.opponentGrid[r][c].type==='empty') emptyCells.push([r,c]);
+          // Pick a random opponent territory tile as the fake target
+          const terrCells=[];
+          for(let r=0;r<12;r++) for(let c=0;c<12;c++){
+            const t=prev.opponentGrid[r][c].type;
+            if(t==='territory'||t==='starting') terrCells.push([r,c]);
+          }
+          if(!emptyCells.length||!terrCells.length)
+            return {...prev,pendingToast:{text:'No valid targets for decoy!',color:'#ff4444'}};
+          const [fr,fc]=emptyCells[Math.floor(Math.random()*emptyCells.length)];
+          const [tr,tc]=terrCells[Math.floor(Math.random()*terrCells.length)];
+          const fromCoord=`${COLS[fc]}${fr+1}`;
+          const toCoord=`${COLS[tc]}${tr+1}`;
+          const who=prev.pvpMode?`p${prev.activePlayer}`:'you';
+          if(prev.pvpMode){
+            // Opponent sees fake attack on their turn, gets one "panic" move, then reveal
+            return {...prev,inventory:consume(prev.inventory),selectedItem:null,
+              pendingDecoy:{from:fromCoord,to:toCoord,attackerPlayer:prev.activePlayer},
+              pvpPendingPass:true,
+              log:[{who,text:`Decoy launched from ${fromCoord} — watching for opponent reaction.`},...prev.log],
+              pendingToast:{text:`Decoy sent. Opponent sees fake attack signal.`,color:'#aaaa22'}};
+          }
+          // AI mode — AI will react (panic) on their turn, then reveal
+          return {...prev,inventory:consume(prev.inventory),selectedItem:null,
+            turn:'ai',
+            pendingDecoy:{from:fromCoord,to:toCoord},
+            log:[{who,text:`Decoy launched from ${fromCoord} — ${botName(prev.aiDifficulty)} sees fake attack.`},...prev.log],
+            pendingToast:{text:`Decoy sent. ${botName(prev.aiDifficulty)} sees a fake attack signal.`,color:'#aaaa22'}};
         }
         default:
           return {...prev,pendingToast:{text:'Effect coming soon',color:'#555555'}};
@@ -1347,13 +1774,40 @@ function App(){
     setGs(prev=>({...prev,siloActive:null,actionInput:'',actionError:'',actionWarned:null}));
   },[]);
 
-  const submitSilo=useCallback(()=>{
+  // Phase 1 — arm torpedo: enter target coord, opponent warned, turn spent
+  const lockSilo=useCallback(()=>{
     setGs(prev=>{
       if(!prev.siloActive) return prev;
       const coord=parseCoord(prev.actionInput);
       if(!coord) return {...prev,actionError:'Invalid. Use A1–L12'};
       const {row:cr,col:cc}=coord;
       const {r:siloR,c:siloC}=prev.siloActive;
+      const who=prev.pvpMode?`p${prev.activePlayer}`:'you';
+      const coordStr=`${COLS[cc]}${cr+1}`;
+      const msg=`Torpedo armed on ${coordStr}. Opponent warned. Their last move.`;
+      // Remove silo tile from grid immediately (it's been fired — waiting to land)
+      const newYG=cloneGrid(prev.yourGrid);
+      newYG[siloR][siloC]=mkCell('empty');
+      return {
+        ...prev,
+        yourGrid:newYG,
+        pendingSilo:{row:cr,col:cc,siloR,siloC,attackerPlayer:prev.activePlayer||0},
+        siloActive:null,siloPrepped:null,
+        actionInput:'',actionError:'',actionWarned:null,
+        actionMessage:msg,
+        log:[{who,text:msg},...prev.log],
+        turn:prev.aiMode?'ai':'you',
+        pvpPendingPass:prev.pvpMode,
+        pendingToast:{text:`Torpedo armed on ${coordStr}. Opponent gets one last move.`,color:'#cc2233'},
+      };
+    });
+  },[]);
+
+  // Phase 2 — fire the locked torpedo
+  const confirmSilo=useCallback(()=>{
+    setGs(prev=>{
+      if(!prev.pendingSilo) return prev;
+      const {row:cr,col:cc,siloR,siloC}=prev.pendingSilo;
       let newHit=prev.hitGrid.map(r=>[...r]);
       let newOppGrid=cloneGrid(prev.opponentGrid);
       const hits=[];
@@ -1369,9 +1823,7 @@ function App(){
           const tr=cr+dr,tc2=cc+dc;
           if(!inBounds(tr,tc2)) continue;
           const oppCell=newOppGrid[tr][tc2];
-          // Skip already broken/empty cells
           if(oppCell.type==='empty'||oppCell.type==='broken') continue;
-          // Determine wasType for display
           const wasType=
             oppCell.type==='cr'&&!oppCell.collected?'cr':
             oppCell.type==='br'&&!oppCell.collected?'br':
@@ -1389,7 +1841,6 @@ function App(){
         newOppGrid=prunedOpp;
         if(torpPruned>0) hits.push(`[+${torpPruned} disconnected]`);
       }
-      // PvP p2 grid sync
       let newP2=prev.p2;
       if(prev.pvpMode&&prev.p2){
         const newP2YG=cloneGrid(prev.p2.yourGrid);
@@ -1407,18 +1858,30 @@ function App(){
       }
       const newYourGrid=cloneGrid(prev.yourGrid);
       newYourGrid[siloR][siloC]=mkCell('empty');
+      // Sync aiOwnGrid when player torpedo damages AI territory (AI mode only)
+      let newAiOwnGrid=prev.aiOwnGrid;
+      if(prev.aiMode){
+        newAiOwnGrid=cloneGrid(prev.aiOwnGrid);
+        for(let pr=0;pr<12;pr++) for(let pc=0;pc<12;pc++){
+          if(newOppGrid[pr][pc].type==='broken'||newOppGrid[pr][pc].type==='empty'){
+            if(newAiOwnGrid[pr][pc]?.type==='territory'||newAiOwnGrid[pr][pc]?.type==='station')
+              newAiOwnGrid[pr][pc]=mkCell('empty');
+          }
+        }
+      }
       const siloBase=`${COLS[siloC]}${siloR+1}`;
       const torpWinner=prev.pvpMode?`p${prev.activePlayer}`:'you';
       const msg=won
         ?`Torpedo from silo at ${siloBase} — direct hit on enemy territory at ${COLS[cc]}${cr+1}! ${prev.pvpMode?`Player ${prev.activePlayer} wins!`:'YOU WIN!'}`
         :`Torpedo from silo at ${siloBase} targeting ${COLS[cc]}${cr+1}! Destroyed: ${hits.length?hits.join(', '):'none'}.`;
-      return {...prev,hitGrid:newHit,opponentGrid:newOppGrid,p2:newP2,yourGrid:newYourGrid,
-        siloActive:null,actionInput:'',actionError:'',actionMessage:msg,actionWarned:null,
+      return {...prev,hitGrid:newHit,opponentGrid:newOppGrid,p2:newP2,yourGrid:newYourGrid,aiOwnGrid:newAiOwnGrid,
+        pendingSilo:null,siloActive:null,siloPrepped:null,actionInput:'',actionError:'',actionMessage:msg,actionWarned:null,
         gameOver:won,winner:won?torpWinner:prev.winner,
+        winReason:won&&prev.pvpMode?`Antimatter Torpedo — direct hit on enemy territory at ${COLS[cc]}${cr+1}!`:prev.winReason,
         log:[{who:prev.pvpMode?`p${prev.activePlayer}`:'you',text:msg},...prev.log],
         turn:prev.aiMode&&!won?'ai':'you',
         pvpPendingPass:prev.pvpMode&&!won,
-        pendingToast:{text:won?`TORPEDO WIN! ${prev.pvpMode?`Player ${prev.activePlayer} wins!`:'YOU WIN!'}`:msg,color:won?'#44ff44':'#8855ff'}};
+        pendingToast:{text:won?`Direct Hit on territory ${COLS[cc]}${cr+1}. Opponent territories destroyed: You win!`:msg,color:won?'#44ff44':'#8855ff'}};
     });
   },[]);
 
@@ -1464,88 +1927,27 @@ function App(){
         }
         newP2={...prev.p2,yourGrid:newP2YG,territory:p2Terr};
       }
+      // Sync aiOwnGrid when player laser destroys AI territory (AI mode only)
+      let newAiOwnGrid=prev.aiOwnGrid;
+      if(prev.aiMode){
+        newAiOwnGrid=cloneGrid(prev.aiOwnGrid);
+        newAiOwnGrid[row][col]=mkCell('empty');
+        for(let pr=0;pr<12;pr++) for(let pc=0;pc<12;pc++){
+          if(newOppGrid[pr][pc].type==='empty'&&newAiOwnGrid[pr][pc]?.type==='territory')
+            newAiOwnGrid[pr][pc]=mkCell('empty');
+        }
+      }
       const typeLabel={cr:'CR',br:'BR',sr:'SR',territory:'territory tile',station:'station tile'};
       const msg=`Laser: destroyed ${typeLabel[wasType]||'tile'} at ${COLS[col]}${row+1}!${pruneMsg}`;
       const playerBase=`${COLS[prev.ssC]}${prev.ssR+1}`;
       const logMsg=`${msg} (fired from ${playerBase})`;
-      return {...prev,hitGrid:newHit,opponentGrid:newOppGrid,p2:newP2,
+      return {...prev,hitGrid:newHit,opponentGrid:newOppGrid,p2:newP2,aiOwnGrid:newAiOwnGrid,
         inventory:consumeLaser(prev.inventory),selectedItem:null,
         activeAction:null,actionInput:'',actionError:'',actionMessage:logMsg,actionWarned:null,
         log:[{who:prev.pvpMode?`p${prev.activePlayer}`:'you',text:logMsg},...prev.log],
         turn:prev.aiMode?'ai':'you',
         pvpPendingPass:prev.pvpMode,
         pendingToast:{text:msg,color:'#ff4488'}};
-    });
-  },[]);
-
-  const submitTorpedo=useCallback(()=>{
-    setGs(prev=>{
-      const coord=parseCoord(prev.actionInput);
-      if(!coord) return {...prev,actionError:'Invalid. Use A1–L12'};
-      const {row:cr,col:cc}=coord;
-      let newHit=prev.hitGrid.map(r=>[...r]);
-      let newOppGrid=cloneGrid(prev.opponentGrid);
-      const hits=[];
-      let won=false;
-      // Check center for instant win
-      const centerCell=newOppGrid[cr][cc];
-      if(centerCell.type==='territory'||centerCell.type==='starting'){
-        newHit[cr][cc]={result:'broken',wasType:'territory'};
-        newOppGrid[cr][cc]=mkBroken('territory');
-        won=true;
-      }
-      if(!won){
-        for(let dr=-1;dr<=1;dr++) for(let dc=-1;dc<=1;dc++){
-          const tr=cr+dr,tc2=cc+dc;
-          if(!inBounds(tr,tc2)) continue;
-          const oppCell=newOppGrid[tr][tc2];
-          if(oppCell.type==='empty'||oppCell.type==='broken') continue;
-          const wasType=
-            oppCell.type==='cr'&&!oppCell.collected?'cr':
-            oppCell.type==='br'&&!oppCell.collected?'br':
-            oppCell.type==='sr_res'&&!oppCell.collected?'sr':
-            (oppCell.type==='starting'||oppCell.type==='territory')?'territory':
-            oppCell.type==='station'?'station':null;
-          if(!wasType) continue;
-          newHit[tr][tc2]={result:'broken',wasType};
-          newOppGrid[tr][tc2]=mkBroken(wasType);
-          hits.push(`${COLS[tc2]}${tr+1}`);
-        }
-        // Disconnection pruning on opponent grid
-        const ssR2=prev.pvpMode?prev.p2.ssR:prev.opponentSsR;
-        const ssC2=prev.pvpMode?prev.p2.ssC:prev.opponentSsC;
-        const {grid:prunedOpp,removed:torpPruned}=pruneDisconnected(newOppGrid,ssR2,ssC2);
-        newOppGrid=prunedOpp;
-        if(torpPruned>0) hits.push(`[+${torpPruned} disconnected]`);
-      }
-      // PvP p2 grid sync
-      let newP2=prev.p2;
-      if(prev.pvpMode&&prev.p2&&!won){
-        const newP2YG=cloneGrid(prev.p2.yourGrid);
-        for(let pr=0;pr<12;pr++) for(let pc=0;pc<12;pc++){
-          if(newOppGrid[pr][pc].type==='broken'&&newP2YG[pr][pc].type!=='broken')
-            newP2YG[pr][pc]=mkBroken(newOppGrid[pr][pc].wasType);
-          if(newOppGrid[pr][pc].type==='empty'&&(newP2YG[pr][pc].type==='territory'||newP2YG[pr][pc].type==='station'))
-            newP2YG[pr][pc]=mkCell('empty');
-        }
-        let p2Terr=0;
-        for(let pr=0;pr<12;pr++) for(let pc=0;pc<12;pc++){
-          if(newP2YG[pr][pc].type==='territory'||newP2YG[pr][pc].type==='starting') p2Terr++;
-        }
-        newP2={...prev.p2,yourGrid:newP2YG,territory:p2Terr};
-      }
-      const playerBase=`${COLS[prev.ssC]}${prev.ssR+1}`;
-      const msg=won
-        ?`Torpedo from ${playerBase} — center hit enemy territory at ${COLS[cc]}${cr+1}! YOU WIN!`
-        :`Torpedo from ${playerBase} at ${COLS[cc]}${cr+1}! Destroyed: ${hits.length?hits.join(', '):'none'}.`;
-      const torpWinner=prev.pvpMode?`p${prev.activePlayer}`:'you';
-      return {...prev,hitGrid:newHit,opponentGrid:newOppGrid,p2:newP2,
-        activeAction:null,actionInput:'',actionError:'',actionMessage:msg,
-        gameOver:won,winner:won?torpWinner:prev.winner,
-        log:[{who:prev.pvpMode?`p${prev.activePlayer}`:'you',text:msg},...prev.log],
-        turn:prev.aiMode&&!won?'ai':'you',
-        pvpPendingPass:prev.pvpMode&&!won,
-        pendingToast:{text:won?`TORPEDO WIN! ${prev.pvpMode?`Player ${prev.activePlayer} wins!`:'YOU WIN!'}`:msg,color:won?'#44ff44':'#8855ff'}};
     });
   },[]);
 
@@ -1567,7 +1969,7 @@ function App(){
       }:prev.pvpMode&&prev.p2?{
         territory:prev.p2.territory, sr:prev.p2.sr,
         inventory:prev.p2.inventory.map(i=>({...i})),
-        log:prev.log.slice(0,20),
+        log:prev.log.filter(e=>e.who===`p${prev.activePlayer===1?2:1}`).slice(0,20),
       }:null;
       // PvP: sync spy tile to p2's opponentGrid so they see it when searching
       let newP2=prev.p2;
@@ -1603,7 +2005,7 @@ function App(){
           aiShopDisabledRounds:3, aiInventory:[],
           spyPanelOpen:false,
           log:[{who,text:`Spy detonated at ${coord} — enemy shop locked 3 turns, inventory wiped!`},...prev.log],
-          pendingToast:{text:'💥 Spy detonated! Enemy shop locked for 3 turns!',color:'#ff6622'}};
+          pendingToast:{text:'Spy detonated. Enemy shop locked for 3 turns.',color:'#ff6622'}};
       }
       if(prev.pvpMode&&prev.p2){
         return {...prev,
@@ -1611,7 +2013,7 @@ function App(){
           p2:{...prev.p2,shopDisabledRounds:3,inventory:[],selectedItem:null},
           spyPanelOpen:false,
           log:[{who,text:`Spy detonated at ${coord} — enemy shop locked 3 turns, inventory wiped!`},...prev.log],
-          pendingToast:{text:'💥 Spy detonated! Enemy shop locked for 3 turns!',color:'#ff6622'}};
+          pendingToast:{text:'Spy detonated. Enemy shop locked for 3 turns.',color:'#ff6622'}};
       }
       return prev;
     });
@@ -1628,18 +2030,25 @@ function App(){
     const val=v.toUpperCase();
     const coord=parseCoord(val);
     let autoWarn='';
-    if(coord&&(gs.activeAction==='search'||gs.activeAction==='attack')){
+    if(coord&&gs.activeAction==='search'){
       if(gs.hitGrid[coord.row][coord.col]!==null)
         autoWarn=`${val} already searched — press Go/Enter again to proceed.`;
+    }
+    if(coord&&gs.activeAction==='attack'){
+      const hit=gs.hitGrid[coord.row][coord.col];
+      if(hit===null)
+        autoWarn=`${val} hasn't been searched yet — search it first.`;
+      else if(hit.result!=='territory')
+        autoWarn=`${val} shows no territory — can only attack known territory tiles.`;
     }
     setGs(p=>({...p,actionInput:val,actionError:autoWarn,actionWarned:autoWarn?val:null}));
   };
   const onKey=e=>{
     if(e.key==='Enter'){
       if(gs.activeAction==='search') startRadarSearch();
-      else if(gs.activeAction==='attack') submitAttack();
+      else if(gs.activeAction==='attack') prepareAttack();
       else if(gs.activeAction==='laser') submitLaser();
-      else if(gs.siloActive) submitSilo();
+      else if(gs.siloActive) lockSilo();
     }
     if(e.key==='Escape'){
       if(gs.siloActive) closeSiloAction();
@@ -1649,16 +2058,6 @@ function App(){
 
   const vp=gs.placementMode?validPlacements(gs.yourGrid):new Set();
   const vsp=gs.siloPlaceMode?validSiloPositions(gs.yourGrid):new Set();
-
-  const hitCounts=useMemo(()=>{
-    let cr=0,br=0,sr=0;
-    for(const cell of gs.hitGrid.flat()){
-      if(cell?.result==='cr') cr++;
-      else if(cell?.result==='br') br++;
-      else if(cell?.result==='sr') sr++;
-    }
-    return {cr,br,sr};
-  },[gs.hitGrid]);
 
   // Fog of war: each territory/starting/station tile reveals a 5×5 area on YOUR grid
   const visibleCells=useMemo(()=>{
@@ -1799,13 +2198,17 @@ function App(){
       }
       case 'silo': {
         const isActiveSilo=gs.siloActive&&gs.siloActive.r===r&&gs.siloActive.c===c;
+        const isPrepped=gs.siloPrepped?.r===r&&gs.siloPrepped?.c===c;
+        const siloCls=`cell ${isPrepped?'c-silo-prepped':'c-silo'}${isActiveSilo?' c-station-sel':''}`;
+        const siloColor=isPrepped?'#ff4455':isActiveSilo?'#cc88ff':'#aa66ff';
+        const siloLbl=isPrepped?'ARMED':'SILO';
+        const siloTitle=`${COLS[c]}${r+1} — Torpedo Silo${isPrepped?' (ARMED — click to fire)':isActiveSilo?' (select action…)':(gs.siloPlaceMode?'':' — click to prepare')}`;
         return(
-          <div key={c} className={`cell c-silo${isActiveSilo?' c-station-sel':''}`}
+          <div key={c} className={siloCls}
             onClick={()=>!gs.siloPlaceMode&&openSiloAction(r,c)}
-            title={`${COLS[c]}${r+1} — Torpedo Silo${isActiveSilo?' (targeting…)':(gs.siloPlaceMode?'':' — click to fire')}`}
-            {...mEnter}>
-            <span style={{color:isActiveSilo?'#cc88ff':'#aa66ff',fontSize:14,lineHeight:1}}>⊕</span>
-            <span style={{fontSize:6,color:'rgba(180,130,255,.65)',lineHeight:1,marginTop:1}}>SILO</span>
+            title={siloTitle} {...mEnter}>
+            <span style={{color:siloColor,fontSize:14,lineHeight:1}}>⊕</span>
+            <span style={{fontSize:6,color:isPrepped?'rgba(255,80,90,.8)':'rgba(180,130,255,.65)',lineHeight:1,marginTop:1}}>{siloLbl}</span>
           </div>
         );
       }
@@ -1826,9 +2229,14 @@ function App(){
   }
 
   function renderHit(cell,r,c){
-    if(!cell) return <div key={c} className="cell c-hit-blank" title={`${COLS[c]}${r+1}`}/>;
+    // Show red ! if opponent has a prepped silo at this position
+    const oppSiloPrep=gs.pvpMode?gs.p2?.siloPrepped:null;
+    const isSiloWarn=oppSiloPrep&&oppSiloPrep.r===r&&oppSiloPrep.c===c;
+    const warnClass=isSiloWarn?' c-hit-silo-warn':'';
+
+    if(!cell) return <div key={c} className={`cell c-hit-blank${warnClass}`} title={`${COLS[c]}${r+1}${isSiloWarn?' — ⚠ Enemy torpedo silo!':''}`}/>;
     if(cell.result==='miss') return(
-      <div key={c} className="cell c-hit-miss" title={`${COLS[c]}${r+1} — Miss`}>
+      <div key={c} className={`cell c-hit-miss${warnClass}`} title={`${COLS[c]}${r+1} — Miss${isSiloWarn?' ⚠ Enemy torpedo silo!':''}`}>
         <span style={{color:'#ddbb00',fontSize:16,lineHeight:1,fontWeight:'bold',textShadow:'0 0 6px rgba(220,180,0,.6)'}}>×</span>
       </div>
     );
@@ -1842,7 +2250,7 @@ function App(){
       };
       const {cls,xc,lbl}=wasMap[cell.wasType]||{cls:'c-hit-miss',xc:'#555',lbl:'?'};
       return(
-        <div key={c} className={`cell ${cls} c-hit-broken`} title={`${COLS[c]}${r+1} — destroyed`}>
+        <div key={c} className={`cell ${cls} c-hit-broken${warnClass}`} title={`${COLS[c]}${r+1} — destroyed`}>
           <span style={{color:xc,fontSize:15,lineHeight:1,opacity:.55}}>✕</span>
           <span style={{fontSize:6,color:'rgba(255,255,255,.35)',lineHeight:1,marginTop:1}}>{lbl}</span>
         </div>
@@ -1857,13 +2265,32 @@ function App(){
     };
     const {cls,xc,lbl}=map[cell.result]||{cls:'c-hit-miss',xc:'#444',lbl:''};
     return(
-      <div key={c} className={`cell ${cls}`} title={`${COLS[c]}${r+1}`}>
+      <div key={c} className={`cell ${cls}${warnClass}`} title={`${COLS[c]}${r+1}${isSiloWarn?' — ⚠ Enemy torpedo silo!':''}`}>
         <span style={{color:xc,fontSize:18,lineHeight:1}}>◆</span>
         <span style={{fontSize:7,color:'rgba(255,255,255,.5)',lineHeight:1,marginTop:1}}>{lbl}</span>
       </div>
     );
   }
 
+
+  // Read-only full-reveal renderer for spectate mode (opponent's actual grid)
+  function renderSpectateOpp(cell,r,c){
+    if(!cell||cell.type==='empty') return <div key={c} className="cell c-empty" title={`${COLS[c]}${r+1}`}/>;
+    let cls='cell '; let inner=null;
+    switch(cell.type){
+      case 'starting': cls+='c-starting'; inner=<span className="cell-icon" style={{color:'#ffe066',fontSize:15}}>★</span>; break;
+      case 'territory': cls+='c-territory'; break;
+      case 'cr': cls+='c-cr'+(cell.collected?' done':''); inner=cell.collected?<span style={{color:'#1a3a1a',fontSize:13}}>✕</span>:<span className="cell-icon" style={{color:'#33aa33'}}>◆</span>; break;
+      case 'br': cls+='c-br'+(cell.collected?' done':''); inner=cell.collected?<span style={{color:'#3a1a1a',fontSize:13}}>✕</span>:<span className="cell-icon" style={{color:'#cc3333'}}>◆</span>; break;
+      case 'sr_res': cls+='c-srr'+(cell.collected?' done':''); inner=cell.collected?<span style={{color:'#1a1a3a',fontSize:13}}>✕</span>:<span className="cell-icon" style={{color:'#3333cc'}}>◆</span>; break;
+      case 'station': cls+='c-station'; inner=<span style={{color:'#00cccc',fontSize:13,lineHeight:1}}>◈</span>; break;
+      case 'silo': cls+='c-silo'; inner=<><span style={{color:'#aa66ff',fontSize:14,lineHeight:1}}>⊕</span><span style={{fontSize:6,color:'rgba(180,130,255,.65)',lineHeight:1,marginTop:1}}>SILO</span></>; break;
+      case 'spy': cls+='c-spy'; inner=<><span style={{color:'#2299cc',fontSize:14,lineHeight:1}}>⊙</span><span style={{fontSize:6,color:'rgba(100,180,255,.55)',lineHeight:1,marginTop:1}}>SPY</span></>; break;
+      case 'broken': cls+='c-broken'; break;
+      default: cls+='c-empty';
+    }
+    return <div key={c} className={cls} title={`${COLS[c]}${r+1} — ${cell.type}`}>{inner}</div>;
+  }
 
   const selInvItem=gs.inventory.find(i=>i.iid===gs.selectedItem);
 
@@ -1896,7 +2323,7 @@ function App(){
       <div className="start-corner start-corner-tr"/>
       <div className="start-corner start-corner-bl"/>
       <div className="start-corner start-corner-br"/>
-      <div style={{position:'absolute',bottom:24,right:'50%',transform:'translateX(50%)',fontSize:10,color:'rgba(110,140,80,.65)',letterSpacing:3,fontFamily:'Courier New,monospace',userSelect:'none'}}>V.0.1.6</div>
+      <div style={{position:'absolute',bottom:24,right:'50%',transform:'translateX(50%)',fontSize:10,color:'rgba(110,140,80,.65)',letterSpacing:3,fontFamily:'Courier New,monospace',userSelect:'none'}}>V.0.2.0</div>
       <div className="start-title">It's Just Logic</div>
       <div style={{display:'flex',flexDirection:'column',gap:'10px',alignItems:'center'}}>
         <button className="btn-start" onClick={()=>startGame(false)}>Start 1v0</button>
@@ -1915,17 +2342,22 @@ function App(){
   );
 
   return(
-    <div className="app">
+    <div className="app" style={spectateMode?{paddingTop:36,pointerEvents:'none'}:{}}>
+      {sfxLabel&&<div style={{position:'fixed',bottom:10,right:14,fontSize:9,color:'rgba(90,160,60,0.55)',letterSpacing:3,fontFamily:'Courier New,monospace',pointerEvents:'none',userSelect:'none',zIndex:9999,textTransform:'uppercase'}}>{sfxLabel}</div>}
       <div className="main">
 
         {/* LEFT — GRID */}
         <div className="grid-area">
           <div className="grid-controls">
-            <span className="view-title">{gs.viewMode==='your'?'YOUR GRID':'HIT GRID'}</span>
+            <span className="view-title">
+              {spectateMode?(spectateViewOpp?"OPPONENT'S BOARD":'YOUR BOARD'):gs.viewMode==='your'?'YOUR GRID':"OPPONENT'S GRID"}
+            </span>
+            {!spectateMode&&<>
             <button className={`btn btn-view${gs.viewMode==='your'?' on':''}`}
               onClick={()=>set_({viewMode:'your',pendingToast:{text:'Viewing your grid',color:'#557799'}})}>Your Grid</button>
             <button className={`btn btn-view${gs.viewMode==='hit'?' on':''}`}
-              onClick={()=>set_({viewMode:'hit',pendingToast:{text:'Viewing hit grid',color:'#557799'}})}>Hit Grid</button>
+              onClick={()=>set_({viewMode:'hit',pendingToast:{text:"Viewing opponent's grid",color:'#557799'}})}>Opponent's Grid</button>
+            </>}
           </div>
 
           <div className="grid-scroll-wrap">
@@ -1938,11 +2370,16 @@ function App(){
                   {Array.from({length:12},(_,r)=>(
                     <div key={r} className="grid-row">
                       <div className="row-lbl">{r+1}</div>
-                      {Array.from({length:12},(_,c)=>
-                        gs.viewMode==='your'
+                      {Array.from({length:12},(_,c)=>{
+                        if(spectateMode&&spectateViewOpp){
+                          const oppGrid=gs.pvpMode&&gs.p2?gs.p2.yourGrid:gs.opponentGrid;
+                          return renderSpectateOpp(oppGrid[r][c],r,c);
+                        }
+                        // In spectate-your-board mode always show your grid (toggle buttons are hidden)
+                        return (spectateMode||gs.viewMode==='your')
                           ?renderYour(gs.yourGrid[r][c],r,c)
-                          :renderHit(gs.hitGrid[r][c],r,c)
-                      )}
+                          :renderHit(gs.hitGrid[r][c],r,c);
+                      })}
                     </div>
                   ))}
                 </div>
@@ -1956,7 +2393,9 @@ function App(){
                     <div className="grid-radar-border"/>
                     <div className="grid-radar-info">
                       <div className="grid-radar-coord">{COLS[radarCell.c]}{radarCell.r+1}</div>
-                      <div className="grid-radar-scanning">Scanning…</div>
+                      {radarRevealed
+                        ? <div style={{fontSize:12,fontWeight:'bold',letterSpacing:2,color:radarCell.previewColor,textShadow:`0 0 10px ${radarCell.previewColor}`}}>{radarCell.preview}</div>
+                        : <div className="grid-radar-scanning">Scanning…</div>}
                     </div>
                   </div>
                 )}
@@ -1973,7 +2412,7 @@ function App(){
               ?<div className="log-empty">No moves yet</div>
               :gs.log.map((entry,i)=>(
                 <div key={i} className={`log-entry ${entry.who==='you'||entry.who==='p1'?'log-you':entry.who==='p2'?'log-p2':'log-opp'}`}>
-                  <span className="log-who">{entry.who==='you'?'YOU':entry.who==='p1'?'P1':entry.who==='p2'?'P2':'ORION'}</span>
+                  <span className="log-who">{entry.who==='you'?'YOU':entry.who==='p1'?'P1':entry.who==='p2'?'P2':botName(gs.aiDifficulty)}</span>
                   {entry.who==='ai'?'made a move.':entry.text}
                 </div>
               ))
@@ -1990,21 +2429,32 @@ function App(){
 
         {/* RIGHT PANEL */}
         <div className="right">
+          {spectateMode&&spectateViewOpp&&(
+            <div style={{fontSize:9,color:'#334433',letterSpacing:2,textTransform:'uppercase',marginBottom:4,textAlign:'center'}}>Opponent Stats</div>
+          )}
           <div className="stat-card">
             <div className="stat-name">Territory</div>
-            <div className={`stat-val sv-ter`}>{gs.territory}</div>
+            <div className={`stat-val sv-ter`}>
+              {spectateMode&&spectateViewOpp
+                ?(gs.pvpMode&&gs.p2?gs.p2.territory:gs.aiTerritory)
+                :gs.territory}
+            </div>
           </div>
           <div className="stat-card">
             <div className="stat-name">SR</div>
-            <div className={`stat-val sv-sr`}>{gs.sr}</div>
+            <div className={`stat-val sv-sr`}>
+              {spectateMode&&spectateViewOpp
+                ?(gs.pvpMode&&gs.p2?gs.p2.sr:gs.aiSr)
+                :gs.sr}
+            </div>
           </div>
 
-          <div style={{display:'flex',gap:6,flexWrap:'wrap'}}>
+          {!spectateMode&&<div style={{display:'flex',gap:6,flexWrap:'wrap'}}>
             <button className="btn btn-shop" style={{flex:1}} onClick={()=>set_({shopOpen:true,pendingToast:{text:'Shop opened',color:'#aaaa44'}})}>⬡ SHOP</button>
             {gs.spy&&<button className="btn" style={{flex:1,borderColor:'#1a5577',color:'#3399cc',background:'#081420',fontSize:11}}
               onClick={()=>setGs(p=>({...p,spyPanelOpen:!p.spyPanelOpen}))}>⊙ Intel</button>}
-          </div>
-          {gs.shopDisabledRounds>0&&(
+          </div>}
+          {!spectateMode&&gs.shopDisabledRounds>0&&(
             <div style={{fontSize:10,color:'#ff5544',background:'#1a0808',border:'1px solid #551111',borderRadius:4,padding:'4px 8px',textAlign:'center'}}>
               ⚠ Shop locked by spy — {gs.shopDisabledRounds} turn{gs.shopDisabledRounds!==1?'s':''} left
             </div>
@@ -2012,18 +2462,23 @@ function App(){
 
           <div>
             <div className="sec-head">Inventory</div>
-            {gs.inventory.length===0
+            {(()=>{const inv=spectateMode&&spectateViewOpp?(gs.pvpMode&&gs.p2?gs.p2.inventory:gs.aiInventory):gs.inventory;
+              return inv.length===0
               ?<div className="inv-empty">No items owned</div>
-              :gs.inventory.map(item=>(
-                <div key={item.iid} className={`inv-item${gs.selectedItem===item.iid?' sel':''}`}>
+              :inv.map(item=>(
+                <div key={item.iid} className={`inv-item${!spectateMode&&gs.selectedItem===item.iid?' sel':''}`}>
                   <span className="inv-name">{item.name}</span>
-                  <button className={`btn btn-sel${gs.selectedItem===item.iid?' on':''}`}
-                    onClick={()=>selectItem(item.iid)}>
-                    {gs.selectedItem===item.iid?'Active':'Select'}
-                  </button>
+                  {!spectateMode&&<div style={{display:'flex',gap:3,alignItems:'center'}}>
+                    <button className={`btn btn-sel${gs.selectedItem===item.iid?' on':''}`}
+                      onClick={()=>selectItem(item.iid)}>
+                      {gs.selectedItem===item.iid?'●':'○'}
+                    </button>
+                    <button className="btn btn-go" style={{padding:'2px 8px',fontSize:10,letterSpacing:1,opacity:gs.aiMode&&gs.turn==='ai'?0.35:1}}
+                      disabled={gs.aiMode&&gs.turn==='ai'}
+                      onClick={()=>useItem(item.iid)}>Use</button>
+                  </div>}
                 </div>
-              ))
-            }
+              ));})()}
           </div>
 
         </div>
@@ -2031,12 +2486,17 @@ function App(){
 
       {/* BOTTOM BAR */}
       <div className="bottom">
-        {gs.placementMode&&(
+        {spectateMode&&(
+          <div style={{fontSize:10,color:'#2a3a2a',letterSpacing:3,textTransform:'uppercase',textAlign:'center',padding:'4px 0'}}>
+            — spectating — read only —
+          </div>
+        )}
+        {!spectateMode&&gs.placementMode&&(
           <div className="place-banner">
             Place territory: {gs.placementRemaining} remaining — click a highlighted square
           </div>
         )}
-        {selInvItem&&!gs.stationMode&&!gs.siloPlaceMode&&!gs.spyPlaceMode&&!gs.activeAction&&(
+        {!spectateMode&&selInvItem&&!gs.stationMode&&!gs.siloPlaceMode&&!gs.spyPlaceMode&&!gs.activeAction&&(
           <div className="sel-banner" style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:8}}>
             <span style={{fontSize:11}}>
               {selInvItem.name} — {
@@ -2054,50 +2514,125 @@ function App(){
             <button className="btn btn-go" style={{padding:'4px 14px',fontSize:12}} onClick={useItem}>Use</button>
           </div>
         )}
-        {gs.stationMode&&(
+        {!spectateMode&&gs.stationMode&&(
           <div className="place-banner" style={{borderColor:'#009999',color:'#00cccc',display:'flex',alignItems:'center',gap:10}}>
             <span>Space Station: click any empty cell to place a station tile (station: {countStation(gs.yourGrid)}/7)</span>
             <button className="btn btn-cancel" style={{padding:'4px 10px',fontSize:11}} onClick={cancelStation}>Cancel</button>
           </div>
         )}
-        {gs.siloPlaceMode&&(
+        {!spectateMode&&gs.siloPlaceMode&&(
           <div className="place-banner" style={{borderColor:'#7733cc',color:'#aa66ff',display:'flex',alignItems:'center',gap:10}}>
             <span>Torpedo Silo: click a highlighted cell adjacent to your territory to place</span>
             <button className="btn btn-cancel" style={{padding:'4px 10px',fontSize:11}} onClick={cancelSiloPlace}>Cancel</button>
           </div>
         )}
-        {gs.spyPlaceMode&&(
+        {!spectateMode&&gs.spyPlaceMode&&(
           <div className="place-banner" style={{borderColor:'#1a6699',color:'#3399cc',display:'flex',alignItems:'center',gap:10}}>
             <span>Spy Resource: click any empty cell on your grid — enemy will see an SR there</span>
             <button className="btn btn-cancel" style={{padding:'4px 10px',fontSize:11}} onClick={cancelSpyPlace}>Cancel</button>
           </div>
         )}
-        {gs.rerootMode&&(
+        {!spectateMode&&gs.rerootMode&&(
           <div className="place-banner" style={{borderColor:'#22aa55',color:'#44cc77',display:'flex',alignItems:'center',gap:10}}>
             <span>Add Root: click any territory or station tile to add it as an extra root</span>
             <button className="btn btn-cancel" style={{padding:'4px 10px',fontSize:11}} onClick={cancelReroot}>Cancel</button>
           </div>
         )}
-        {gs.shieldMode&&(
+        {!spectateMode&&gs.shieldMode&&(
           <div className="place-banner" style={{borderColor:'#2266cc',color:'#55aaff',display:'flex',alignItems:'center',gap:10}}>
             <span>Shield: click a territory tile on your grid to protect it</span>
             <button className="btn btn-cancel" style={{padding:'4px 10px',fontSize:11}} onClick={cancelShield}>Cancel</button>
           </div>
         )}
-        {gs.actionMessage&&!gs.activeAction&&(
+        {!spectateMode&&gs.actionMessage&&!gs.activeAction&&(
           <div className="msg-txt">{gs.actionMessage}</div>
         )}
-        {gs.detectedAlarm&&gs.turn==='you'&&!gs.gameOver&&(
+        {!spectateMode&&gs.detectedAlarm&&gs.turn==='you'&&!gs.gameOver&&(
           <div className="alarm-banner">
             <span style={{fontSize:16,lineHeight:1}}>⚠</span>
-            <span>TERRITORY DETECTED — the enemy has located your territory!</span>
+            <span>TERRITORY DETECTED. The enemy has located your territory.</span>
             <button className="alarm-x" onClick={dismissAlarm}>✕</button>
           </div>
         )}
-        <div className="bottom-row">
+        {/* Incoming attack warning — shown to the defender in PvP */}
+        {!spectateMode&&gs.pvpMode&&gs.pendingAttack&&gs.pendingAttack.attackerPlayer!==gs.activePlayer&&!gs.gameOver&&(
+          <div className="alarm-banner" style={{borderColor:'#cc4422',background:'#180604',animation:'alarm-pulse 1s ease infinite'}}>
+            <span style={{color:'#ff6644',fontWeight:'bold'}}>
+              INCOMING ATTACK — Player {gs.pendingAttack.attackerPlayer} is striking {COLS[gs.pendingAttack.col]}{gs.pendingAttack.row+1}! This is your last move.
+            </span>
+          </div>
+        )}
+        {/* Incoming attack warning — shown to player during AI's last move (1vBot) */}
+        {!spectateMode&&gs.aiMode&&gs.pendingAttack&&gs.turn==='ai'&&!gs.gameOver&&(
+          <div style={{padding:'5px 14px',fontSize:11,color:'#cc6622',background:'rgba(30,12,4,0.9)',
+            border:'1px solid #442211',borderRadius:4,letterSpacing:1}}>
+            ⏳ Attack locked on {COLS[gs.pendingAttack.col]}{gs.pendingAttack.row+1} — {botName(gs.aiDifficulty)} takes their last move…
+          </div>
+        )}
+        {/* Decoy fake attack banner — PvP victim (they don't know it's fake) */}
+        {!spectateMode&&gs.pvpMode&&gs.pendingDecoy&&gs.pendingDecoy.attackerPlayer!==gs.activePlayer&&!gs.gameOver&&(
+          <div className="alarm-banner" style={{borderColor:'#886600',background:'#141000',animation:'alarm-pulse 1s ease infinite'}}>
+            <span style={{color:'#ffcc00',fontWeight:'bold'}}>
+              ⚠ INCOMING ATTACK — from {gs.pendingDecoy.from} targeting {gs.pendingDecoy.to}! Make your move.
+            </span>
+          </div>
+        )}
+        {/* Decoy — AI mode: show player that AI is reacting to fake signal */}
+        {!spectateMode&&gs.aiMode&&gs.pendingDecoy&&gs.turn==='ai'&&!gs.gameOver&&(
+          <div style={{padding:'5px 14px',fontSize:11,color:'#aaaa22',background:'rgba(20,18,4,0.9)',
+            border:'1px solid #554400',borderRadius:4,letterSpacing:1}}>
+            {botName(gs.aiDifficulty)} is reacting to the fake attack signal…
+          </div>
+        )}
+        {/* Incoming torpedo warning — PvP defender */}
+        {!spectateMode&&gs.pvpMode&&gs.pendingSilo&&gs.pendingSilo.attackerPlayer!==gs.activePlayer&&!gs.gameOver&&(
+          <div className="alarm-banner" style={{borderColor:'#882233',background:'#150406',animation:'alarm-pulse 1s ease infinite'}}>
+            <span style={{color:'#ff4455',fontWeight:'bold'}}>
+              INCOMING TORPEDO — Player {gs.pendingSilo.attackerPlayer} locked on {COLS[gs.pendingSilo.col]}{gs.pendingSilo.row+1}! This is your last move.
+            </span>
+          </div>
+        )}
+        {/* Incoming torpedo warning — 1vBot waiting for AI last move (player torpedo) */}
+        {!spectateMode&&gs.aiMode&&gs.pendingSilo&&gs.turn==='ai'&&!gs.gameOver&&(
+          <div style={{padding:'5px 14px',fontSize:11,color:'#cc2233',background:'rgba(25,4,8,0.9)',
+            border:'1px solid #551122',borderRadius:4,letterSpacing:1}}>
+            Torpedo armed on {COLS[gs.pendingSilo.col]}{gs.pendingSilo.row+1}. {botName(gs.aiDifficulty)} takes their last move…
+          </div>
+        )}
+        {/* AI torpedo warning — shown to player during their last move */}
+        {!spectateMode&&gs.aiMode&&gs.pendingAiTorpedo&&gs.turn==='you'&&!gs.gameOver&&(
+          <div className="alarm-banner" style={{borderColor:'#882233',background:'#150406',animation:'alarm-pulse 1s ease infinite'}}>
+            <span style={{color:'#ff4455',fontWeight:'bold'}}>
+              INCOMING TORPEDO — {botName(gs.aiDifficulty)} locked on {COLS[gs.pendingAiTorpedo.col]}{gs.pendingAiTorpedo.row+1}! This is your last move.
+            </span>
+          </div>
+        )}
+        {/* AI torpedo — waiting indicator during AI's fire turn */}
+        {!spectateMode&&gs.aiMode&&gs.pendingAiTorpedo&&gs.turn==='ai'&&!gs.gameOver&&(
+          <div style={{padding:'5px 14px',fontSize:11,color:'#cc2233',background:'rgba(25,4,8,0.9)',
+            border:'1px solid #551122',borderRadius:4,letterSpacing:1}}>
+            Torpedo incoming at {COLS[gs.pendingAiTorpedo.col]}{gs.pendingAiTorpedo.row+1}…
+          </div>
+        )}
+        {/* AI attack warning — shown to player during their last move */}
+        {!spectateMode&&gs.aiMode&&gs.pendingAiAttack&&gs.turn==='you'&&!gs.gameOver&&(
+          <div className="alarm-banner" style={{borderColor:'#cc4422',background:'#180604',animation:'alarm-pulse 1s ease infinite'}}>
+            <span style={{color:'#ff6644',fontWeight:'bold'}}>
+              INCOMING ATTACK — {botName(gs.aiDifficulty)} targeting {COLS[gs.pendingAiAttack.col]}{gs.pendingAiAttack.row+1}! This is your last move.
+            </span>
+          </div>
+        )}
+        {/* AI attack — waiting indicator during AI's strike turn */}
+        {!spectateMode&&gs.aiMode&&gs.pendingAiAttack&&gs.turn==='ai'&&!gs.gameOver&&(
+          <div style={{padding:'5px 14px',fontSize:11,color:'#cc6622',background:'rgba(30,12,4,0.9)',
+            border:'1px solid #442211',borderRadius:4,letterSpacing:1}}>
+            Attack incoming at {COLS[gs.pendingAiAttack.col]}{gs.pendingAiAttack.row+1}…
+          </div>
+        )}
+        {!spectateMode&&<div className="bottom-row">
           {gs.pvpMode&&<span style={{fontSize:'10px',color:'#8888aa',letterSpacing:'1px',textTransform:'uppercase'}}>Player {gs.activePlayer}'s Turn</span>}
           {gs.aiMode&&<span style={{fontSize:'10px',color:'#444',letterSpacing:'1px',textTransform:'uppercase'}}>{botName(gs.aiDifficulty)}</span>}
-          {gs.aiMode&&gs.turn==='ai'&&(
+          {gs.aiMode&&gs.turn==='ai'&&!gs.pendingAttack&&!gs.pendingSilo&&!gs.pendingAiTorpedo&&!gs.pendingAiAttack&&(
             <span className="msg-txt" style={{color:'#dd8866'}}>{botName(gs.aiDifficulty)} is thinking…</span>
           )}
           {phase==='game'&&gs.turn==='you'&&!gs.gameOver&&!gs.pvpMode&&(
@@ -2111,12 +2646,53 @@ function App(){
           {gs.pvpMode&&gs.pvpPendingPass&&!gs.gameOver&&(
             <button className="btn-start" style={{fontSize:13,padding:'8px 28px'}} onClick={passPvp}>Pass Device →</button>
           )}
-          {!gs.pvpPendingPass&&gs.viewMode==='hit'&&gs.turn==='you'&&<>
-          <button className={`btn btn-search${gs.activeAction==='search'?' btn-view on':''}`}
-            onClick={()=>openAction('search')}>Search</button>
-          <button className={`btn btn-attack${gs.activeAction==='attack'?' btn-view on':''}`}
-            onClick={()=>openAction('attack')}>Attack</button>
-          </>}
+          {/* Confirm Attack — shown to the attacker on their next turn */}
+          {!gs.pvpPendingPass&&gs.turn==='you'&&gs.pendingAttack&&
+           (!gs.pvpMode||(gs.pvpMode&&gs.pendingAttack.attackerPlayer===gs.activePlayer))&&!gs.gameOver&&(
+            <>
+              <span style={{fontSize:10,color:'#cc6622',letterSpacing:2,textTransform:'uppercase',fontWeight:'bold'}}>
+                {COLS[gs.pendingAttack.col]}{gs.pendingAttack.row+1}
+              </span>
+              <button className="btn btn-attack" style={{background:'#2a0a04',borderColor:'#cc3322',color:'#ff5533',fontWeight:'bold',padding:'5px 18px',letterSpacing:1}}
+                onClick={confirmAttack}>Confirm Attack</button>
+              <button className="btn btn-cancel" style={{fontSize:11,padding:'5px 10px'}}
+                onClick={()=>setGs(p=>({...p,pendingAttack:null,activeAction:null,actionInput:'',
+                  actionMessage:'Attack cancelled.',
+                  turn:p.aiMode?'ai':'you',
+                  pvpPendingPass:p.pvpMode,
+                  pendingToast:{text:'Attack cancelled.',color:'#555555'}}))}>Cancel</button>
+            </>
+          )}
+          {/* Confirm Launch — shown to torpedo attacker on their next turn */}
+          {!gs.pvpPendingPass&&gs.turn==='you'&&gs.pendingSilo&&
+           (!gs.pvpMode||(gs.pvpMode&&gs.pendingSilo.attackerPlayer===gs.activePlayer))&&!gs.gameOver&&(
+            <>
+              <span style={{fontSize:10,color:'#cc2233',letterSpacing:2,textTransform:'uppercase',fontWeight:'bold'}}>
+                Torpedo: {COLS[gs.pendingSilo.col]}{gs.pendingSilo.row+1}
+              </span>
+              <button className="btn btn-attack" style={{background:'#200408',borderColor:'#882233',color:'#ff3344',fontWeight:'bold',padding:'5px 18px',letterSpacing:1}}
+                onClick={confirmSilo}>Fire Torpedo</button>
+              <button className="btn btn-cancel" style={{fontSize:11,padding:'5px 10px'}}
+                onClick={()=>setGs(p=>({...p,pendingSilo:null,activeAction:null,actionInput:'',
+                  actionMessage:'Torpedo cancelled.',
+                  turn:p.aiMode?'ai':'you',
+                  pvpPendingPass:p.pvpMode,
+                  pendingToast:{text:'Torpedo cancelled.',color:'#555555'}}))}>Cancel</button>
+            </>
+          )}
+          {/* Search: hide only when it's YOUR OWN pending action to confirm, not when you're the defender */}
+          {!gs.pvpPendingPass&&
+           !(gs.pendingAttack&&(!gs.pvpMode||gs.pendingAttack.attackerPlayer===gs.activePlayer))&&
+           !(gs.pendingSilo&&(!gs.pvpMode||gs.pendingSilo.attackerPlayer===gs.activePlayer))&&
+           gs.viewMode==='hit'&&gs.turn==='you'&&(
+            <button className={`btn btn-search${gs.activeAction==='search'?' btn-view on':''}`}
+              onClick={()=>openAction('search')}>Search</button>
+          )}
+          {/* Attack: hide whenever ANY pending action exists (prevents overwriting) */}
+          {!gs.pvpPendingPass&&!gs.pendingAttack&&!gs.pendingSilo&&gs.viewMode==='hit'&&gs.turn==='you'&&(
+            <button className={`btn btn-attack${gs.activeAction==='attack'?' btn-view on':''}`}
+              onClick={()=>openAction('attack')}>Attack</button>
+          )}
           {!gs.aiMode&&!gs.pvpMode&&<>
             <button className="btn" style={{background:'#081808',borderColor:'#1a4a1a',color:'#44cc44',fontSize:11,padding:'5px 10px'}}
               onClick={()=>setGs(prev=>({...prev,placementMode:true,placementRemaining:(prev.placementRemaining||0)+1,actionMessage:'Cheat: place 1 territory tile.'}))}>
@@ -2125,6 +2701,11 @@ function App(){
             <button className="btn" style={{background:'#08081e',borderColor:'#1a1a44',color:'#8888ff',fontSize:11,padding:'5px 10px'}}
               onClick={()=>setGs(prev=>({...prev,sr:prev.sr+1}))}>
               +1 SR
+            </button>
+            <button className="btn" style={{background:'#080c14',borderColor:'#1a3344',color:'#4488aa',fontSize:10,padding:'4px 10px',letterSpacing:1}}
+              title="Play all 7 sound effects in sequence (~7s)"
+              onClick={playAllSfx}>
+              ♪ SFX
             </button>
           </>}
 
@@ -2140,24 +2721,24 @@ function App(){
                 placeholder="D4" maxLength={3}/>
             </div>
             <button className="btn btn-go" disabled={!!radarCell}
-              onClick={gs.activeAction==='search'?startRadarSearch:gs.activeAction==='attack'?submitAttack:submitLaser}>Go</button>
+              onClick={gs.activeAction==='search'?startRadarSearch:gs.activeAction==='attack'?prepareAttack:submitLaser}>Go</button>
             <button className="btn btn-cancel" onClick={closeAction}>✕</button>
             {gs.actionError&&<span className="err-txt">{gs.actionError}</span>}
           </>)}
-          {gs.siloActive&&!gs.activeAction&&gs.turn==='you'&&(<>
-            <div className="action-form" style={{borderColor:'#7733cc'}}>
-              <span className="action-lbl" style={{color:'#aa66ff'}}>Silo</span>
+          {gs.siloActive&&!gs.activeAction&&gs.turn==='you'&&!gs.pendingSilo&&(<>
+            <div className="action-form" style={{borderColor:'#cc2233'}}>
+              <span className="action-lbl" style={{color:'#aa66ff'}}>Arm</span>
               <input ref={inputRef} className="coord-inp"
                 value={gs.actionInput}
                 onChange={e=>onInput(e.target.value)}
                 onKeyDown={onKey}
                 placeholder="D4" maxLength={3}/>
             </div>
-            <button className="btn btn-go" style={{borderColor:'#7733cc',color:'#aa66ff'}} onClick={submitSilo}>Fire</button>
+            <button className="btn btn-go" style={{borderColor:'#cc2233',color:'#ff4455'}} onClick={lockSilo}>Arm Torpedo</button>
             <button className="btn btn-cancel" onClick={closeSiloAction}>✕</button>
             {gs.actionError&&<span className="err-txt">{gs.actionError}</span>}
           </>)}
-        </div>
+        </div>}
       </div>
 
       {/* TOASTS */}
@@ -2168,28 +2749,64 @@ function App(){
       </div>
 
       {/* GAME OVER */}
-      {gs.gameOver&&(
+      {gs.gameOver&&!spectateMode&&(
         <div className="modal-bg">
           <div className="modal" style={{textAlign:'center',padding:'36px 28px'}}>
-            <div style={{fontSize:36,fontWeight:'bold',letterSpacing:3,color:gs.winner==='you'||gs.winner==='p1'||gs.winner==='p2'?'#44cc44':'#cc4444',marginBottom:10}}>
-              {gs.winner==='you'?'YOU WIN':gs.winner==='p1'?'PLAYER 1 WINS':gs.winner==='p2'?'PLAYER 2 WINS':'YOU LOSE'}
+            <div style={{fontSize:36,fontWeight:'bold',letterSpacing:3,
+              color:gs.winner==='draw'?'#aa8833':gs.winner==='you'||gs.winner==='p1'||gs.winner==='p2'?'#44cc44':'#cc4444',
+              marginBottom:10}}>
+              {gs.winner==='draw'?'MUTUAL DESTRUCTION':gs.winner==='you'?'YOU WIN':gs.winner==='p1'?'PLAYER 1 WINS':gs.winner==='p2'?'PLAYER 2 WINS':'YOU LOSE'}
             </div>
             <div style={{fontSize:13,color:'#555',marginBottom:28}}>
-              {gs.winner==='you'
-                ? gs.territory>=21
-                  ? 'You reached 21 territory tiles.'
-                  : 'You destroyed the opponent\'s territory.'
-                : gs.winner==='ai'
-                  ? gs.aiTerritory>=21
-                    ? `${botName(gs.aiDifficulty)} reached 21 territory tiles.`
-                    : 'Your territory was destroyed.'
-                  : gs.winner==='p1'
-                    ? 'Player 1 won.'
-                    : gs.winner==='p2'
-                      ? 'Player 2 won.'
-                      : 'Your territory was destroyed.'}
+              {gs.winner==='draw'
+                ? 'Equal territory — both sides annihilated each other.'
+                : gs.winner==='you'
+                  ? gs.territory>=21
+                    ? 'You reached 21 territory tiles.'
+                    : 'You destroyed the opponent\'s territory.'
+                  : gs.winner==='ai'
+                    ? gs.aiTerritory>=21
+                      ? `${botName(gs.aiDifficulty)} reached 21 territory tiles.`
+                      : 'Your territory was destroyed.'
+                    : gs.winner==='p1'
+                      ? (gs.winReason||'Player 1 won.')
+                      : gs.winner==='p2'
+                        ? (gs.winReason||'Player 2 won.')
+                        : 'Your territory was destroyed.'}
             </div>
-            <button className="btn-start" style={{fontSize:14,padding:'10px 32px'}} onClick={()=>setPhase('start')}>Play Again</button>
+            <div style={{display:'flex',gap:12,justifyContent:'center',flexWrap:'wrap'}}>
+              <button className="btn-start" style={{fontSize:14,padding:'10px 32px'}} onClick={()=>{setSpectateMode(false);setSpectateViewOpp(false);setPhase('start');}}>Play Again</button>
+              <button className="btn" style={{fontSize:13,padding:'10px 22px',color:'#889988',borderColor:'#2a3a2a',background:'#0a100a'}}
+                onClick={()=>{setSpectateMode(true);setSpectateViewOpp(false);}}>View Board</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* SPECTATE BANNER */}
+      {gs.gameOver&&spectateMode&&(
+        <div style={{position:'fixed',top:0,left:0,right:0,zIndex:8000,pointerEvents:'auto',display:'flex',alignItems:'center',justifyContent:'space-between',
+          background:'rgba(4,8,4,0.94)',borderBottom:'1px solid #1a2a1a',padding:'6px 14px',gap:10}}>
+          <div style={{display:'flex',alignItems:'center',gap:10}}>
+            <span style={{fontSize:10,fontWeight:'bold',letterSpacing:3,textTransform:'uppercase',
+              color:gs.winner==='draw'?'#aa8833':gs.winner==='you'||gs.winner==='p1'||gs.winner==='p2'?'#44cc44':'#cc4444'}}>
+              {gs.winner==='draw'?'▌ DRAW — SPECTATING':gs.winner==='you'||gs.winner==='p1'||gs.winner==='p2'?'▌ VICTORY — SPECTATING':'▌ DEFEAT — SPECTATING'}
+            </span>
+            <span style={{fontSize:9,color:'#3a4a3a',letterSpacing:1}}>Read-only view</span>
+          </div>
+          <div style={{display:'flex',gap:8,alignItems:'center'}}>
+            {(gs.pvpMode&&gs.p2||gs.aiMode)&&<>
+              <button className={`btn${!spectateViewOpp?' on':''}`} style={{fontSize:11,padding:'3px 12px',
+                background:!spectateViewOpp?'#101a10':'#080e08',borderColor:!spectateViewOpp?'#2a5a2a':'#1a2a1a',
+                color:!spectateViewOpp?'#55aa55':'#445544'}}
+                onClick={()=>setSpectateViewOpp(false)}>Your Board</button>
+              <button className={`btn${spectateViewOpp?' on':''}`} style={{fontSize:11,padding:'3px 12px',
+                background:spectateViewOpp?'#101a10':'#080e08',borderColor:spectateViewOpp?'#2a5a2a':'#1a2a1a',
+                color:spectateViewOpp?'#55aa55':'#445544'}}
+                onClick={()=>setSpectateViewOpp(true)}>Opponent's Board</button>
+            </>}
+            <button className="btn-start" style={{fontSize:12,padding:'5px 18px'}}
+              onClick={()=>{setSpectateMode(false);setSpectateViewOpp(false);setPhase('start');}}>Play Again</button>
           </div>
         </div>
       )}
@@ -2202,7 +2819,7 @@ function App(){
               <div>
                 <div className="modal-title" style={{color:'#3399cc'}}>⊙ Spy Intel — {COLS[gs.spy.c]}{gs.spy.r+1}</div>
                 <div className="modal-sub" style={{color:gs.spy.status==='detonated'?'#ff6622':gs.spy.status==='used'?'#888':gs.spy.status==='found'?'#ffaa33':'#3399cc'}}>
-                  Status: {gs.spy.status==='placed'?'Active — awaiting discovery':gs.spy.status==='found'?'⚠ Found by enemy — detonate before they buy!':gs.spy.status==='used'?'Void — enemy made a purchase':'💥 Detonated'}
+                  Status: {gs.spy.status==='placed'?'Active. Awaiting discovery.':gs.spy.status==='found'?'Found by enemy. Detonate before they buy!':gs.spy.status==='used'?'Void. Enemy made a purchase.':'Detonated'}
                 </div>
               </div>
               <button className="modal-close" onClick={()=>setGs(p=>({...p,spyPanelOpen:false}))}>✕</button>
@@ -2245,7 +2862,7 @@ function App(){
               <button className="btn" style={{fontSize:12,color:'#888'}} onClick={()=>setGs(p=>({...p,spyPanelOpen:false}))}>Close</button>
               {(gs.spy.status==='placed'||gs.spy.status==='found')&&(
                 <button className="btn" style={{background:'#2a0808',borderColor:'#882222',color:'#ff5544',fontSize:12}}
-                  onClick={detonateSpy}>💥 Detonate</button>
+                  onClick={detonateSpy}>Detonate</button>
               )}
             </div>
           </div>
